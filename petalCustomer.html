@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Shape Editor Pro v5</title>
+    <title>Shape Editor Pro v6</title>
     <style>
       *,
       *::before,
@@ -65,8 +65,6 @@
           background 0.2s,
           color 0.2s;
       }
-
-      /* ─── HEADER ─── */
       .hdr {
         height: 40px;
         background: var(--bg1);
@@ -129,7 +127,7 @@
           monospace;
         padding: 3px 6px;
         border-radius: 4px;
-        width: 140px;
+        width: 130px;
         outline: none;
         transition: 0.12s;
       }
@@ -183,15 +181,13 @@
       .hbtn.warn:hover:not(:disabled) {
         background: #401818;
       }
-
-      /* ─── CONTEXT BAR ─── */
+      /* CONTEXT BAR */
       .ctxbar {
         height: 30px;
         background: var(--ctx);
         border-bottom: 1px solid var(--bd);
         display: flex;
         align-items: center;
-        gap: 0;
         padding: 0 6px;
         flex-shrink: 0;
         overflow: hidden;
@@ -260,7 +256,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        line-height: 1;
       }
       .ctx-zoom-wrap button:hover {
         background: var(--bg3);
@@ -272,7 +267,7 @@
         cursor: pointer;
         min-width: 34px;
         text-align: center;
-        padding: 2px 2px;
+        padding: 2px;
       }
       .ctx-zoom:hover {
         color: var(--t1);
@@ -288,15 +283,13 @@
         height: 20px;
         cursor: pointer;
       }
-
-      /* ─── LAYOUT ─── */
+      /* LAYOUT */
       .main {
         display: flex;
         flex: 1;
         overflow: hidden;
       }
-
-      /* ─── LEFT ─── */
+      /* LEFT */
       .left {
         width: 192px;
         flex-shrink: 0;
@@ -349,8 +342,7 @@
       .sec-body {
         padding: 6px 8px;
       }
-
-      /* ─── CONTROLS ─── */
+      /* CONTROLS */
       .cr {
         display: flex;
         align-items: center;
@@ -460,8 +452,7 @@
       .selinp:focus {
         border-color: var(--ac);
       }
-
-      /* ─── TOOL GRID ─── */
+      /* TOOL GRID */
       .tool-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -506,8 +497,7 @@
       .tbtn-full {
         grid-column: 1/-1;
       }
-
-      /* ─── PRESETS ─── */
+      /* PRESETS */
       .pgrid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -536,61 +526,7 @@
         color: var(--t1);
         background: var(--bg2);
       }
-
-      /* ─── AI TRACE ─── */
-      .ai-drop {
-        border: 1.5px dashed var(--bd2);
-        border-radius: 5px;
-        padding: 10px 8px;
-        text-align: center;
-        font-size: 9px;
-        color: var(--t3);
-        cursor: pointer;
-        background: var(--bg0);
-        transition: 0.12s;
-        min-height: 52px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-      }
-      .ai-drop:hover {
-        border-color: var(--ac);
-        color: var(--t2);
-      }
-      .ai-drop.has {
-        border-style: solid;
-        border-color: var(--acg);
-        color: var(--t1);
-      }
-      .ai-btn-row {
-        display: flex;
-        gap: 3px;
-        margin-top: 5px;
-      }
-      .ai-btn-row .hbtn {
-        flex: 1;
-        justify-content: center;
-        font-size: 8.5px;
-        padding: 3px 4px;
-      }
-      .ai-progress {
-        margin-top: 5px;
-        height: 3px;
-        border-radius: 2px;
-        background: var(--bg3);
-        overflow: hidden;
-      }
-      .ai-progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, var(--ac), var(--ac2));
-        width: 0%;
-        transition: width 0.2s;
-        border-radius: 2px;
-      }
-
-      /* ─── REF IMAGE ─── */
+      /* REF */
       .drop-z {
         border: 1.5px dashed var(--bd2);
         border-radius: 5px;
@@ -611,8 +547,7 @@
         border-color: var(--acg);
         color: var(--t1);
       }
-
-      /* ─── CANVAS ─── */
+      /* CANVAS */
       .carea {
         flex: 1;
         position: relative;
@@ -627,10 +562,9 @@
         height: 100%;
         cursor: default;
       }
-
-      /* ─── RIGHT PANEL ─── */
+      /* RIGHT */
       .right {
-        width: 278px;
+        width: 300px;
         flex-shrink: 0;
         background: var(--bg1);
         border-left: 1px solid var(--bd);
@@ -647,7 +581,7 @@
         background: transparent;
         border: none;
         color: var(--t3);
-        font-size: 8.5px;
+        font-size: 8px;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -679,8 +613,89 @@
       .rpanel.hidden {
         display: none;
       }
-
-      /* ─── LAYERS ─── */
+      /* EXPORT PANEL */
+      .export-target-row {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 8px;
+      }
+      .etab {
+        flex: 1;
+        background: var(--bg2);
+        border: 1px solid var(--bd);
+        color: var(--t3);
+        font-size: 8.5px;
+        font-weight: 700;
+        padding: 4px 3px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.12s;
+      }
+      .etab:hover {
+        color: var(--t2);
+        border-color: var(--bd2);
+      }
+      .etab.active {
+        background: rgba(82, 114, 240, 0.15);
+        border-color: var(--ac);
+        color: #8aaaff;
+      }
+      .preview-canvas-wrap {
+        border: 1px solid var(--bd);
+        border-radius: 5px;
+        overflow: hidden;
+        background: #060810;
+        margin-bottom: 8px;
+        position: relative;
+      }
+      #previewCanvas {
+        display: block;
+        width: 100%;
+        height: 160px;
+      }
+      .preview-label {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        font-size: 7.5px;
+        color: rgba(255, 255, 255, 0.3);
+        font-family: monospace;
+      }
+      .copy-row {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 7px;
+      }
+      .copy-row .hbtn {
+        flex: 1;
+        justify-content: center;
+        font-size: 9px;
+      }
+      pre.code-out {
+        font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+        font-size: 8.5px;
+        line-height: 1.8;
+        color: #7888b8;
+        white-space: pre;
+        overflow-x: auto;
+      }
+      .k {
+        color: #c792ea;
+      }
+      .n {
+        color: #f9a062;
+      }
+      .f {
+        color: #82aaff;
+      }
+      .c {
+        color: #3d4f5c;
+      }
+      .s {
+        color: #c3e88d;
+      }
+      /* LAYERS */
       .layer-acts {
         display: flex;
         gap: 3px;
@@ -691,8 +706,8 @@
         flex: 1;
         min-width: 0;
         justify-content: center;
-        font-size: 8.5px;
-        padding: 3px 3px;
+        font-size: 8px;
+        padding: 3px 2px;
       }
       .lrow {
         display: flex;
@@ -724,9 +739,6 @@
         font-size: 9px;
         flex-shrink: 0;
         padding: 0 1px;
-      }
-      .l-handle:active {
-        cursor: grabbing;
       }
       .l-dot {
         width: 7px;
@@ -774,8 +786,7 @@
         color: var(--t3);
         background: transparent;
       }
-
-      /* ─── PROPS ─── */
+      /* PROPS */
       .prop-h {
         font-size: 8px;
         font-weight: 700;
@@ -863,7 +874,7 @@
         color: var(--t3);
         font-size: 7.5px;
         border-radius: 2px;
-        padding: 2px 2px;
+        padding: 2px;
         font-family: monospace;
       }
       .empty-h {
@@ -873,32 +884,7 @@
         padding: 12px 4px;
         line-height: 1.6;
       }
-
-      /* ─── CODE ─── */
-      pre {
-        font-family: "SF Mono", "Fira Code", "Consolas", monospace;
-        font-size: 9px;
-        line-height: 1.85;
-        color: #7888b8;
-        white-space: pre;
-      }
-      .k {
-        color: #c792ea;
-      }
-      .n {
-        color: #f9a062;
-      }
-      .f {
-        color: #82aaff;
-      }
-      .c {
-        color: #3d4f5c;
-      }
-      .s {
-        color: #c3e88d;
-      }
-
-      /* ─── STATUS ─── */
+      /* STATUS */
       .sbar {
         height: 21px;
         background: var(--bg1);
@@ -924,8 +910,7 @@
         font-size: 8.5px;
         color: var(--ac);
       }
-
-      /* ─── TOAST & TIP ─── */
+      /* TOAST & TIP */
       .toast {
         position: fixed;
         bottom: 28px;
@@ -959,22 +944,7 @@
         z-index: 100;
         white-space: nowrap;
       }
-
-      /* ─── SNAP INDICATOR ─── */
-      .snap-ind {
-        position: fixed;
-        font-size: 8px;
-        color: #00d4ff;
-        pointer-events: none;
-        background: rgba(0, 20, 40, 0.85);
-        border: 1px solid #00d4ff40;
-        padding: 2px 5px;
-        border-radius: 3px;
-        z-index: 50;
-        display: none;
-      }
-
-      /* ─── AI MODAL ─── */
+      /* AI MODAL */
       .modal-overlay {
         position: fixed;
         inset: 0;
@@ -995,34 +965,34 @@
         background: var(--bg1);
         border: 1px solid var(--bd2);
         border-radius: 10px;
-        padding: 20px 22px;
-        width: 420px;
+        padding: 18px 20px;
+        width: 400px;
         max-width: 95vw;
         box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
       }
       .modal-title {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         margin-bottom: 4px;
       }
       .modal-sub {
-        font-size: 10px;
+        font-size: 9.5px;
         color: var(--t3);
-        margin-bottom: 16px;
+        margin-bottom: 12px;
         line-height: 1.5;
       }
       .modal-canvas {
         border: 1px solid var(--bd);
-        border-radius: 6px;
+        border-radius: 5px;
         background: #08080f;
         width: 100%;
-        height: 200px;
+        height: 180px;
         display: block;
       }
       .modal-row {
         display: flex;
-        gap: 8px;
-        margin-top: 12px;
+        gap: 7px;
+        margin-top: 10px;
       }
       .modal-row .hbtn {
         flex: 1;
@@ -1032,20 +1002,20 @@
       .modal-opts {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-top: 12px;
+        gap: 6px;
+        margin-top: 10px;
       }
       .modal-opt {
         background: var(--bg2);
         border: 1px solid var(--bd);
-        border-radius: 6px;
-        padding: 8px 10px;
+        border-radius: 5px;
+        padding: 7px 9px;
       }
       .modal-opt label {
         font-size: 9px;
         color: var(--t2);
         display: block;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
       }
       .modal-opt input[type="range"] {
         width: 100%;
@@ -1058,15 +1028,15 @@
       .trace-status {
         font-size: 9px;
         color: var(--t3);
-        margin-top: 8px;
-        min-height: 16px;
+        margin-top: 7px;
+        min-height: 14px;
         text-align: center;
       }
       .trace-bar {
         height: 2px;
         background: var(--bg3);
         border-radius: 1px;
-        margin-top: 6px;
+        margin-top: 5px;
         overflow: hidden;
       }
       .trace-bar-fill {
@@ -1076,13 +1046,51 @@
         transition: width 0.15s;
         border-radius: 1px;
       }
+      /* AI DROP */
+      .ai-drop {
+        border: 1.5px dashed var(--bd2);
+        border-radius: 5px;
+        padding: 9px 8px;
+        text-align: center;
+        font-size: 9px;
+        color: var(--t3);
+        cursor: pointer;
+        background: var(--bg0);
+        transition: 0.12s;
+        min-height: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+      .ai-drop:hover {
+        border-color: var(--ac);
+        color: var(--t2);
+      }
+      .ai-drop.has {
+        border-style: solid;
+        border-color: var(--acg);
+        color: var(--t1);
+      }
+      .ai-btn-row {
+        display: flex;
+        gap: 3px;
+        margin-top: 4px;
+      }
+      .ai-btn-row .hbtn {
+        flex: 1;
+        justify-content: center;
+        font-size: 8.5px;
+        padding: 3px 4px;
+      }
     </style>
   </head>
   <body>
     <div class="hdr">
       <div class="logo">✦</div>
       <span class="hdr-title">Shape Editor</span>
-      <span class="badge">Pro v5</span>
+      <span class="badge">Pro v6</span>
       <div class="hdr-sp"></div>
       <button class="hbtn" id="undoBtn" onclick="undo()" disabled>
         ↩ Undo
@@ -1092,24 +1100,22 @@
       </button>
       <div class="ki">
         <span class="ki-l">Key:</span>
-        <input id="keyInp" value="PETALS.YOUR_PETAL" spellcheck="false" />
+        <input
+          id="keyInp"
+          value="PETALS.YOUR_PETAL"
+          spellcheck="false"
+          onchange="
+            S.shapeKey = this.value;
+            generateExport();
+          "
+        />
       </div>
-      <button
-        class="hbtn"
-        onclick="toggleTheme()"
-        id="themeBtn"
-        title="Toggle theme"
-      >
-        🌙
-      </button>
+      <button class="hbtn" onclick="toggleTheme()" id="themeBtn">🌙</button>
       <button class="hbtn" onclick="resetCanvas()">↺ Clear</button>
-      <button class="hbtn g" onclick="exportJSON()" title="Export JSON">
-        📤 JSON
-      </button>
+      <button class="hbtn g" onclick="exportJSON()">📤 JSON</button>
       <button
         class="hbtn g"
         onclick="document.getElementById('jsonFile').click()"
-        title="Import JSON"
       >
         📥 Import
       </button>
@@ -1120,21 +1126,15 @@
         style="display: none"
         onchange="importJSON(this)"
       />
-      <button class="hbtn" onclick="copyCode()">⎘ Copy</button>
-      <button class="hbtn p" onclick="downloadCode()">↓ .ts</button>
+      <button class="hbtn" onclick="copyExport()">⎘ Copy</button>
+      <button class="hbtn p" onclick="downloadExport()">↓ Export</button>
     </div>
-
     <div class="ctxbar" id="ctxbar">
       <div class="ctx-grp" id="ctx-mode-grp">
         <span class="ctx-label" id="ctx-mode-lbl">Select</span>
       </div>
       <div class="ctx-grp">
-        <button
-          class="ctx-btn"
-          id="snapBtn"
-          onclick="toggleSnap()"
-          title="Toggle snap (S)"
-        >
+        <button class="ctx-btn" id="snapBtn" onclick="toggleSnap()">
           🧲 Snap
         </button>
         <select
@@ -1185,7 +1185,6 @@
         <button class="ctx-btn" onclick="resetView()">⊡ Fit</button>
       </div>
     </div>
-
     <div class="main">
       <div class="left">
         <details class="sec" open>
@@ -1193,7 +1192,7 @@
           <div class="sec-body">
             <div class="tool-grid" id="toolGrid">
               <button class="tbtn tbtn-full" data-mode="select">
-                <span class="ti">↖</span>Select / Move<span class="tk">1</span>
+                <span class="ti">↖</span>Select<span class="tk">1</span>
               </button>
               <button class="tbtn" data-mode="pan">
                 <span class="ti">✋</span>Pan<span class="tk">H</span>
@@ -1222,8 +1221,11 @@
               <button class="tbtn" data-mode="ellipse">
                 <span class="ti">⬭</span>Ellipse<span class="tk">9</span>
               </button>
-              <button class="tbtn tbtn-full" data-mode="ref">
-                <span class="ti">🖼</span>Move Ref<span class="tk">R</span>
+              <button class="tbtn" data-mode="text">
+                <span class="ti">T</span>Text<span class="tk">T</span>
+              </button>
+              <button class="tbtn" data-mode="ref">
+                <span class="ti">🖼</span>Ref<span class="tk">R</span>
               </button>
             </div>
           </div>
@@ -1263,25 +1265,25 @@
               <button class="pbtn" onclick="applyPreset('moon')">
                 <span class="pi">☽</span>Moon
               </button>
-              <button class="pbtn" onclick="applyPreset('spiral')">
-                <span class="pi">🌀</span>Spiral
-              </button>
               <button class="pbtn" onclick="applyPreset('crystal')">
                 <span class="pi">💠</span>Crystal
+              </button>
+              <button class="pbtn" onclick="applyPreset('badge')">
+                <span class="pi">🏅</span>Badge
               </button>
             </div>
           </div>
         </details>
 
-        <details class="sec" open>
-          <summary>🤖 AI Trace from Image</summary>
+        <details class="sec">
+          <summary>🤖 AI Trace</summary>
           <div class="sec-body">
             <div
               class="ai-drop"
               id="aiDrop"
               onclick="document.getElementById('aiImgInp').click()"
             >
-              <span style="font-size: 18px">🖼</span>
+              <span style="font-size: 16px">🖼</span>
               <span id="aiDropLbl">Drop image (no BG) or click</span>
             </div>
             <input
@@ -1298,7 +1300,7 @@
                 id="aiTraceBtn"
                 disabled
               >
-                ✨ Trace Shape
+                ✨ Trace
               </button>
               <button
                 class="hbtn warn"
@@ -1308,9 +1310,6 @@
               >
                 ✕
               </button>
-            </div>
-            <div class="ai-progress" id="aiProgress" style="display: none">
-              <div class="ai-progress-bar" id="aiProgressBar"></div>
             </div>
           </div>
         </details>
@@ -1393,7 +1392,7 @@
           <summary>Smart Snap</summary>
           <div class="sec-body">
             <div class="togr">
-              <span class="togl">Enable snapping</span
+              <span class="togl">Enable snap</span
               ><input
                 type="checkbox"
                 id="snapEnabled"
@@ -1405,8 +1404,8 @@
                 "
               />
             </div>
-            <div class="togr" style="margin-top: 4px">
-              <span class="togl">⊕ Axis (0,0)</span
+            <div class="togr" style="margin-top: 3px">
+              <span class="togl">⊕ Axis</span
               ><input
                 type="checkbox"
                 id="snapAxis"
@@ -1433,14 +1432,14 @@
               />
             </div>
             <div class="togr">
-              <span class="togl">○ Ring edge</span
+              <span class="togl">○ Ring</span
               ><input
                 type="checkbox"
                 id="snapRing"
                 onchange="S.snapRing = this.checked"
               />
             </div>
-            <div class="cr" style="margin-top: 4px">
+            <div class="cr" style="margin-top: 3px">
               <span class="cl">Threshold</span>
               <input
                 type="range"
@@ -1549,6 +1548,8 @@
           </div>
         </details>
       </div>
+      <!-- /left -->
+
       <div class="carea" id="carea"><canvas id="c"></canvas></div>
 
       <div class="right">
@@ -1561,10 +1562,10 @@
             Layers
           </button>
           <button class="rtab" data-rtab="props" onclick="setRTab('props')">
-            Properties
+            Props
           </button>
-          <button class="rtab" data-rtab="code" onclick="setRTab('code')">
-            Code
+          <button class="rtab" data-rtab="export" onclick="setRTab('export')">
+            Export
           </button>
           <button class="rtab" data-rtab="json" onclick="setRTab('json')">
             JSON
@@ -1572,9 +1573,10 @@
         </div>
         <div class="rpanel" id="rp-layers">
           <div class="layer-acts">
-            <button class="hbtn" data-act="add-path">+ Path</button>
-            <button class="hbtn" data-act="add-circle">+ Circle</button>
-            <button class="hbtn" data-act="add-stroke">+ Stroke</button>
+            <button class="hbtn" data-act="add-path">+Path</button>
+            <button class="hbtn" data-act="add-circle">+Circ</button>
+            <button class="hbtn" data-act="add-stroke">+Stroke</button>
+            <button class="hbtn" data-act="add-text">+Text</button>
           </div>
           <div id="layerList"></div>
         </div>
@@ -1583,7 +1585,42 @@
             <div class="empty-h">Select a layer to edit.</div>
           </div>
         </div>
-        <div class="rpanel hidden" id="rp-code"><pre id="codeOut"></pre></div>
+        <div class="rpanel hidden" id="rp-export">
+          <div class="export-target-row">
+            <button
+              class="etab active"
+              data-et="pixi"
+              onclick="setExportTarget('pixi')"
+            >
+              PixiJS
+            </button>
+            <button
+              class="etab"
+              data-et="canvas"
+              onclick="setExportTarget('canvas')"
+            >
+              Canvas 2D
+            </button>
+            <button
+              class="etab"
+              data-et="webgl"
+              onclick="setExportTarget('webgl')"
+            >
+              WebGL
+            </button>
+          </div>
+          <div class="preview-canvas-wrap">
+            <canvas id="previewCanvas" width="284" height="160"></canvas>
+            <span class="preview-label" id="previewLabel">PixiJS Preview</span>
+          </div>
+          <div class="copy-row">
+            <button class="hbtn" onclick="copyExport()">⎘ Copy code</button>
+            <button class="hbtn p" onclick="downloadExport()">
+              ↓ Download
+            </button>
+          </div>
+          <pre class="code-out" id="exportOut"></pre>
+        </div>
         <div class="rpanel hidden" id="rp-json">
           <div style="display: flex; gap: 3px; margin-bottom: 7px">
             <button
@@ -1601,34 +1638,35 @@
               📤 Download
             </button>
           </div>
-          <pre id="jsonOut"></pre>
+          <pre class="code-out" id="jsonOut"></pre>
         </div>
       </div>
     </div>
+    <!-- /main -->
+
     <div class="sbar">
       <span class="si">Layer: <b id="st-layer">—</b></span>
       <span class="si">Tool: <b id="st-mode">Select</b></span>
       <span class="si">Pts: <b id="st-pts">—</b></span>
       <span class="si-snap" id="st-snap"></span>
-      <span class="si-r si">Shape Editor Pro v5.0</span>
+      <span class="si-r si">Shape Editor Pro v6</span>
     </div>
-
     <div class="toast" id="toast"></div>
     <div class="tip" id="tip"></div>
-    <div class="snap-ind" id="snapInd"></div>
 
+    <!-- AI MODAL -->
     <div class="modal-overlay" id="aiModal">
       <div class="modal">
         <div class="modal-title">✨ AI Trace — Image → Shape</div>
         <div class="modal-sub">
-          Adjust settings then click "Generate Layers" to auto-trace the
-          silhouette into vector path layers.
+          Upload a PNG/WebP with transparency. Adjust settings then generate
+          layers.
         </div>
         <canvas
           class="modal-canvas"
           id="aiPreviewCanvas"
-          width="380"
-          height="200"
+          width="360"
+          height="180"
         ></canvas>
         <div class="modal-opts">
           <div class="modal-opt">
@@ -1640,7 +1678,6 @@
               id="alphaThr"
               min="0"
               max="128"
-              step="1"
               value="30"
               oninput="
                 document.getElementById('vAlphaThr').textContent = this.value;
@@ -1665,13 +1702,12 @@
             />
           </div>
           <div class="modal-opt">
-            <label>Smooth passes <span class="cv" id="vSmooth">2</span></label>
+            <label>Smooth <span class="cv" id="vSmooth">2</span></label>
             <input
               type="range"
               id="smoothPasses"
               min="0"
               max="6"
-              step="1"
               value="2"
               oninput="
                 document.getElementById('vSmooth').textContent = this.value;
@@ -1680,7 +1716,7 @@
             />
           </div>
           <div class="modal-opt">
-            <label>Output layers</label>
+            <label>Output</label>
             <select
               class="selinp"
               id="aiLayerMode"
@@ -1713,7 +1749,11 @@
       let _uid = 1;
       const uid = () => "s" + _uid++;
       const f2 = (v) => parseFloat(v || 0).toFixed(2);
-      const hx = (c) => "0x" + c.slice(1).toUpperCase();
+      const f3 = (v) => parseFloat(v || 0).toFixed(3);
+      const hx = (c) => {
+        if (!c || c.length < 4) return "0x000000";
+        return "0x" + c.replace("#", "").toUpperCase();
+      };
       const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
       const COLORS = [
         "#e8d400",
@@ -1760,6 +1800,7 @@
         refOffX: 0,
         refOffY: 0,
         refVisible: true,
+        exportTarget: "pixi",
       };
       let snapState = null;
 
@@ -1846,6 +1887,7 @@
             name,
             color,
             visible: true,
+            fill: true,
             closePath: true,
             offsetX: 0,
             offsetY: 0,
@@ -1866,6 +1908,7 @@
             name,
             color,
             visible: true,
+            fill: true,
             offsetX: 0,
             offsetY: 0,
             scale: 1,
@@ -1887,6 +1930,7 @@
             name,
             color,
             visible: true,
+            fill: false,
             offsetX: 0,
             offsetY: 0,
             scale: 1,
@@ -1901,6 +1945,30 @@
         s.stroke.width = 0.04;
         s.stroke.color = color;
         return s;
+      }
+      function mkText(name, color, opts = {}) {
+        return Object.assign(
+          {
+            id: uid(),
+            type: "text",
+            name,
+            color,
+            visible: true,
+            offsetX: 0,
+            offsetY: 0,
+            scale: 1,
+            rotationDeg: 0,
+            repeatCount: 1,
+            text: "Text",
+            fontSize: 0.2,
+            fontFamily: "Arial",
+            fontWeight: "bold",
+            textAlign: "center",
+            textBaseline: "middle",
+            stroke: mkStroke(),
+          },
+          opts,
+        );
       }
 
       // ══════════════════════════════════════════════
@@ -1953,7 +2021,7 @@
         nd("M", 0, 0.9),
         nd("C", -1.1, -1.1, -2.2, 0.8, 0, -0.1),
         nd("C", 2.2, 0.8, 1.1, -1.1, 0, 0.9),
-      ]; // heart
+      ];
       const shN = () => [
         nd("M", 0, -1),
         nd("C", 0.5, -1, 1, -0.6, 1, 0),
@@ -1975,53 +2043,25 @@
         nd("L", -1, 0.25),
         nd("L", -1, -0.25),
       ];
-      function mnN() {
-        // crescent moon
+      const crysN = () => [
+        nd("M", 0, -1),
+        nd("L", 0.4, -0.3),
+        nd("L", 0.7, 0.2),
+        nd("L", 0.35, 0.6),
+        nd("L", 0, 1),
+        nd("L", -0.35, 0.6),
+        nd("L", -0.7, 0.2),
+        nd("L", -0.4, -0.3),
+      ];
+      const bdgN = () => {
         const pts = [];
-        for (let i = 0; i <= 16; i++) {
-          const a = (i / 16) * Math.PI * 2 - Math.PI / 2;
-          pts.push(
-            nd(i === 0 ? "M" : "L", Math.cos(a) * 0.98, Math.sin(a) * 0.98),
-          );
-        }
-        // inner circle offset
-        pts.push(nd("M", 0.35, -0.6));
-        for (let i = 0; i <= 16; i++) {
-          const a = (i / 16) * Math.PI * 2 - Math.PI / 2;
-          pts.push(nd("L", 0.35 + Math.cos(a) * 0.75, Math.sin(a) * 0.85));
+        for (let i = 0; i < 8; i++) {
+          const a = (i / 8) * Math.PI * 2 - Math.PI / 2;
+          const r = i % 2 === 0 ? 1 : 0.7;
+          pts.push(nd(i === 0 ? "M" : "L", Math.cos(a) * r, Math.sin(a) * r));
         }
         return pts;
-      }
-      function spN() {
-        // spiral approximation
-        const pts = [];
-        let px = 0,
-          py = 0;
-        pts.push(nd("M", 0, 0));
-        for (let i = 0; i < 40; i++) {
-          const a = (i / 40) * Math.PI * 4;
-          const r = (i / 40) * 0.95;
-          const x = Math.cos(a) * r,
-            y = Math.sin(a) * r;
-          pts.push(nd("L", x, y));
-          px = x;
-          py = y;
-        }
-        return pts;
-      }
-      function crysN() {
-        // crystal facets
-        return [
-          nd("M", 0, -1),
-          nd("L", 0.4, -0.3),
-          nd("L", 0.7, 0.2),
-          nd("L", 0.35, 0.6),
-          nd("L", 0, 1),
-          nd("L", -0.35, 0.6),
-          nd("L", -0.7, 0.2),
-          nd("L", -0.4, -0.3),
-        ];
-      }
+      };
 
       const PRESETS = {
         talisman: {
@@ -2200,11 +2240,6 @@
             }),
           ],
         },
-        spiral: {
-          label: "Spiral",
-          ai: 0,
-          shapes: [mkFree("Spiral", "#a060ff", null, {})],
-        },
         crystal: {
           label: "Crystal",
           ai: 0,
@@ -2237,6 +2272,25 @@
             ),
           ],
         },
+        badge: {
+          label: "Badge",
+          ai: 0,
+          shapes: [
+            mkPath("Shadow", bdgN(), "#4a1a00", {
+              scale: 1.07,
+              offsetX: 0.02,
+              offsetY: 0.04,
+            }),
+            mkPath("Body", bdgN(), "#d04010"),
+            mkCircle("InnerRing", "#ff8040", 0.72),
+            mkCircle("Center", "#fff0e0", 0.55),
+            mkText("Label", "#c04010", {
+              text: "BADGE",
+              fontSize: 0.18,
+              fontWeight: "bold",
+            }),
+          ],
+        },
       };
 
       function cloneShape(s) {
@@ -2244,6 +2298,7 @@
         c.id = uid();
         if (c.nodes) c.nodes.forEach((n) => (n.id = uid()));
         if (!c.stroke) c.stroke = mkStroke();
+        if (c.fill === undefined) c.fill = c.type !== "freehand";
         return c;
       }
       function applyPreset(name) {
@@ -2295,30 +2350,43 @@
         canvas.height = el.offsetHeight;
         redraw();
       }
-      function localToScreen(sh, x, y, rep = 0) {
+
+      // ══════════════════════════════════════════════
+      //  COORDINATE MATH — FIXED
+      //  World = center + (localPos * scale rotated by angle) + offset*s
+      //  This matches exactly what the export code generates.
+      // ══════════════════════════════════════════════
+      function localToScreen(sh, lx, ly, rep = 0) {
         const { cx, cy, s } = getVP();
         const reps = Math.max(1, Math.round(sh.repeatCount || 1));
-        const rot =
-          (((sh.rotationDeg || 0) + rep * (360 / reps)) * Math.PI) / 180;
+        const rotDeg = (sh.rotationDeg || 0) + rep * (360 / reps);
+        const rot = (rotDeg * Math.PI) / 180;
         const C = Math.cos(rot),
-          SN = Math.sin(rot),
-          sc = sh.scale || 1;
-        const lx = x * sc,
-          ly = y * sc;
+          SN = Math.sin(rot);
+        const sc = sh.scale || 1;
+        // Apply scale first, then rotate
+        const rx = lx * sc * C - ly * sc * SN;
+        const ry = lx * sc * SN + ly * sc * C;
+        // offset is in normalized units → multiply by s
         return [
-          cx + s * (lx * C - ly * SN + (sh.offsetX || 0)),
-          cy + s * (lx * SN + ly * C + (sh.offsetY || 0)),
+          cx + s * (rx + (sh.offsetX || 0)),
+          cy + s * (ry + (sh.offsetY || 0)),
         ];
       }
       function screenToLocal(sh, sx, sy) {
         const { cx, cy, s } = getVP();
-        let dx = (sx - cx) / s - (sh.offsetX || 0),
-          dy = (sy - cy) / s - (sh.offsetY || 0);
+        // Remove offset first
+        const ox = (sx - cx) / s - (sh.offsetX || 0);
+        const oy = (sy - cy) / s - (sh.offsetY || 0);
+        // Inverse rotate
         const rot = (-(sh.rotationDeg || 0) * Math.PI) / 180;
         const C = Math.cos(rot),
-          SN = Math.sin(rot),
-          sc = sh.scale || 1;
-        return [(dx * C - dy * SN) / sc, (dx * SN + dy * C) / sc];
+          SN = Math.sin(rot);
+        const rx = ox * C - oy * SN;
+        const ry = ox * SN + oy * C;
+        // Inverse scale
+        const sc = sh.scale || 1;
+        return [rx / sc, ry / sc];
       }
       function setZoom(z) {
         S.zoom = clamp(z, 0.08, 10);
@@ -2371,8 +2439,8 @@
           tryY(Math.round(ly / g) * g);
         }
         if (S.snapRing) {
-          const dist = Math.hypot(lx, ly);
-          if (Math.abs(dist - 1) < t) {
+          const d = Math.hypot(lx, ly);
+          if (Math.abs(d - 1) < t) {
             const a = Math.atan2(ly, lx);
             tryX(Math.cos(a));
             tryY(Math.sin(a));
@@ -2462,6 +2530,12 @@
           setMode("line");
         } else if (type === "circle") {
           sh = mkCircle("Circle " + shapeN++, nextColor(), 0.2);
+          S.shapes.push(sh);
+          S.activeId = sh.id;
+          S.selNodeId = null;
+          setMode("select");
+        } else if (type === "text") {
+          sh = mkText("Text " + shapeN++, nextColor());
           S.shapes.push(sh);
           S.activeId = sh.id;
           S.selNodeId = null;
@@ -2681,16 +2755,16 @@
           cy2 = (sy + ey) / 2,
           rx = Math.abs(ex - sx) / 2,
           ry = Math.abs(ey - sy) / 2;
-        const addN = (seg, x, y, cx1 = 0, cy1 = 0, cx2b = 0, cy2b = 0) =>
+        const addN = (seg, x, y, c1x = 0, c1y = 0, c2x = 0, c2y = 0) =>
           sh.nodes.push({
             id: uid(),
             seg,
             x,
             y,
-            cx1,
-            cy1,
-            cx2: cx2b,
-            cy2: cy2b,
+            cx1: c1x,
+            cy1: c1y,
+            cx2: c2x,
+            cy2: c2y,
           });
         sh.nodes = [];
         if (type === "rect") {
@@ -2798,10 +2872,10 @@
         if (S.mode === "ref" && S.refImg && S.refVisible)
           drawRefHandle(cx, cy, s);
         updStatus();
-        generateCode();
+        generateExport();
         generateJSONView();
+        updateExportPreview();
       }
-
       function drawChecker(W, H) {
         const cell = 14,
           dk = S.theme === "dark";
@@ -2897,6 +2971,7 @@
         ctx.stroke();
         ctx.restore();
       }
+
       function buildPath2D(sh, rep) {
         const p = new Path2D();
         sh.nodes.forEach((n, i) => {
@@ -2933,6 +3008,7 @@
         );
         return true;
       }
+
       function drawInstance(sh, rep, cx, cy, s) {
         ctx.save();
         if (sh.type === "path") {
@@ -2941,16 +3017,20 @@
             return;
           }
           const p = buildPath2D(sh, rep);
-          ctx.fillStyle = sh.color;
-          ctx.fill(p);
+          if (sh.fill !== false) {
+            ctx.fillStyle = sh.color;
+            ctx.fill(p);
+          }
           if (applyStroke(sh, s)) ctx.stroke(p);
         } else if (sh.type === "circle") {
           const [px, py] = localToScreen(sh, sh.x, sh.y, rep);
           const rad = s * (sh.scale || 1) * sh.radius;
           ctx.beginPath();
           ctx.arc(px, py, Math.max(0, rad), 0, Math.PI * 2);
-          ctx.fillStyle = sh.color;
-          ctx.fill();
+          if (sh.fill !== false) {
+            ctx.fillStyle = sh.color;
+            ctx.fill();
+          }
           if (applyStroke(sh, s)) {
             ctx.beginPath();
             ctx.arc(px, py, Math.max(0, rad), 0, Math.PI * 2);
@@ -2990,6 +3070,15 @@
               ctx.stroke();
             }
           }
+        } else if (sh.type === "text") {
+          const [px, py] = localToScreen(sh, 0, 0, rep);
+          const fs = (sh.fontSize || 0.2) * s * (sh.scale || 1);
+          ctx.font = `${sh.fontWeight || "bold"} ${Math.max(6, fs)}px ${sh.fontFamily || "Arial"}`;
+          ctx.fillStyle = sh.color;
+          ctx.textAlign = sh.textAlign || "center";
+          ctx.textBaseline = sh.textBaseline || "middle";
+          if (sh.fill !== false) ctx.fillText(sh.text || "", px, py);
+          if (applyStroke(sh, s)) ctx.strokeText(sh.text || "", px, py);
         }
         ctx.restore();
       }
@@ -3104,6 +3193,9 @@
             const [px, py] = localToScreen(sh, x, y, 0);
             dot(px, py, 3, "#5ad1ff", false);
           });
+        } else if (sh.type === "text") {
+          const [px, py] = localToScreen(sh, 0, 0, 0);
+          dot(px, py, 6, "#ff9d4d", true);
         }
         ctx.restore();
       }
@@ -3121,10 +3213,10 @@
           const sh = S.shapes[i];
           if (!sh.visible) continue;
           if (sh.type === "path" && sh.nodes) {
-            const offscreenC = document.createElement("canvas");
-            offscreenC.width = canvas.width;
-            offscreenC.height = canvas.height;
-            const oc = offscreenC.getContext("2d");
+            const oc = document.createElement("canvas");
+            oc.width = canvas.width;
+            oc.height = canvas.height;
+            const octx = oc.getContext("2d");
             const reps = S.showRepeats
               ? Math.max(1, Math.round(sh.repeatCount || 1))
               : 1;
@@ -3147,7 +3239,11 @@
                 }
               });
               if (sh.closePath) p.closePath();
-              if (oc.isPointInPath(p, mx, my) || oc.isPointInStroke(p, mx, my))
+              octx.lineWidth = 8;
+              if (
+                octx.isPointInPath(p, mx, my) ||
+                octx.isPointInStroke(p, mx, my)
+              )
                 return sh.id;
             }
           } else if (sh.type === "circle") {
@@ -3159,11 +3255,13 @@
               const rad = s * (sh.scale || 1) * sh.radius;
               if (Math.hypot(mx - px, my - py) < rad) return sh.id;
             }
+          } else if (sh.type === "text") {
+            const [px, py] = localToScreen(sh, 0, 0, 0);
+            if (Math.hypot(mx - px, my - py) < 20) return sh.id;
           }
         }
         return null;
       }
-
       function hitTestHandles(mx, my) {
         const sh = getActive();
         if (!sh) return null;
@@ -3190,6 +3288,9 @@
           const [rx, ry] = localToScreen(sh, sh.x + sh.radius, sh.y, 0);
           if (Math.hypot(mx - rx, my - ry) < TH) return { t: "cr" };
           if (Math.hypot(mx - px, my - py) < TH) return { t: "cc" };
+        } else if (sh.type === "text") {
+          const [px, py] = localToScreen(sh, 0, 0, 0);
+          if (Math.hypot(mx - px, my - py) < TH) return { t: "textPos" };
         }
         return null;
       }
@@ -3223,7 +3324,15 @@
           startGesture(mx, my, S.mode);
           return;
         }
-
+        if (S.mode === "text") {
+          const sh = getActive();
+          if (!sh || sh.type !== "text") {
+            toast("Add a Text layer first");
+            return;
+          }
+          // Text layers just position via offsetX/Y drag from handles
+          return;
+        }
         if (S.mode === "select") {
           const hit = hitTestHandles(mx, my);
           if (hit) {
@@ -3314,14 +3423,18 @@
             drag.n.cx1 = lx;
             drag.n.cy1 = ly;
             syncNodeUI(drag.n);
-            showTip(e, `h1:(${f2(lx)},${f2(ly)})`);
           } else if (drag.t === "c2") {
             const [lx, ly] = screenToLocal(sh, mx, my);
             drag.n.cx2 = lx;
             drag.n.cy2 = ly;
             syncNodeUI(drag.n);
-            showTip(e, `h2:(${f2(lx)},${f2(ly)})`);
           } else if (drag.t === "offset") {
+            const { cx, cy, s } = getVP();
+            sh.offsetX = (mx - cx) / s;
+            sh.offsetY = (my - cy) / s;
+            syncPropUI("offsetX", sh.offsetX);
+            syncPropUI("offsetY", sh.offsetY);
+          } else if (drag.t === "textPos") {
             const { cx, cy, s } = getVP();
             sh.offsetX = (mx - cx) / s;
             sh.offsetY = (my - cy) / s;
@@ -3349,7 +3462,6 @@
                 ? "crosshair"
                 : "default";
       });
-
       window.addEventListener("mouseup", () => {
         if (panDrag) panDrag = null;
         if (refDrag) refDrag = null;
@@ -3364,7 +3476,6 @@
         snapState = null;
         document.getElementById("st-snap").textContent = "";
       });
-
       canvas.addEventListener(
         "wheel",
         (e) => {
@@ -3396,18 +3507,18 @@
           );
       }
       function syncNodeUI(n) {
-        const setNI = (nid, fld, val) => {
+        const sn = (nid, fld, val) => {
           const el = document.querySelector(
             `[data-nid="${nid}"][data-fld="${fld}"]`,
           );
           if (el) el.value = val;
         };
-        setNI(n.id, "nx", f2(n.x));
-        setNI(n.id, "ny", f2(n.y));
-        setNI(n.id, "c1x", f2(n.cx1));
-        setNI(n.id, "c1y", f2(n.cy1));
-        setNI(n.id, "c2x", f2(n.cx2));
-        setNI(n.id, "c2y", f2(n.cy2));
+        sn(n.id, "nx", f2(n.x));
+        sn(n.id, "ny", f2(n.y));
+        sn(n.id, "c1x", f2(n.cx1));
+        sn(n.id, "c1y", f2(n.cy1));
+        sn(n.id, "c2x", f2(n.cx2));
+        sn(n.id, "c2y", f2(n.cy2));
       }
       function syncPropUI(fld, val) {
         const el = document.querySelector(`[data-fld="${fld}"]`);
@@ -3436,9 +3547,9 @@
         arc: "Arc",
         rect: "Rectangle",
         ellipse: "Ellipse",
+        text: "Text",
         ref: "Move Ref",
       };
-
       function setMode(m) {
         S.mode = m;
         document
@@ -3449,7 +3560,9 @@
             ? "grab"
             : ["freehand", "rect", "ellipse", "arc"].includes(m)
               ? "crosshair"
-              : "default";
+              : m === "text"
+                ? "text"
+                : "default";
         updateCtxBar();
         updStatus();
       }
@@ -3459,9 +3572,9 @@
         setMode(btn.dataset.mode);
       });
       function updateCtxBar() {
-        const gb = document.getElementById("gridBtn");
-        const hb = document.getElementById("handlesBtn");
-        const sb = document.getElementById("snapBtn");
+        const gb = document.getElementById("gridBtn"),
+          hb = document.getElementById("handlesBtn"),
+          sb = document.getElementById("snapBtn");
         if (gb) gb.classList.toggle("on", S.showGrid);
         if (hb) hb.classList.toggle("on", S.showHandles);
         if (sb) sb.classList.toggle("on", S.snapEnabled);
@@ -3476,8 +3589,7 @@
             sh &&
             sh.type === "path"
           ) {
-            extra = `<span class="ctx-sep"></span><label style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--t2);cursor:pointer">
-        <input type="checkbox" ${sh.closePath ? "checked" : ""} style="accent-color:var(--ac)" onchange="const a=getActive();if(a){a.closePath=this.checked;redraw();}"> Close path</label>`;
+            extra = `<span class="ctx-sep"></span><label style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--t2);cursor:pointer"><input type="checkbox" ${sh.closePath ? "checked" : ""} style="accent-color:var(--ac)" onchange="const a=getActive();if(a){a.closePath=this.checked;redraw();}"> Close path</label>`;
           }
           grp.innerHTML = `<span class="ctx-label">${MODE_LABEL[S.mode] || S.mode}</span>${extra}`;
         }
@@ -3490,11 +3602,24 @@
         document
           .querySelectorAll(".rtab")
           .forEach((b) => b.classList.toggle("active", b.dataset.rtab === tab));
-        ["layers", "props", "code", "json"].forEach((t) =>
+        ["layers", "props", "export", "json"].forEach((t) =>
           document
             .getElementById("rp-" + t)
             .classList.toggle("hidden", t !== tab),
         );
+      }
+      function setExportTarget(et) {
+        S.exportTarget = et;
+        document
+          .querySelectorAll(".etab")
+          .forEach((b) => b.classList.toggle("active", b.dataset.et === et));
+        document.getElementById("previewLabel").textContent = {
+          pixi: "PixiJS Preview",
+          canvas: "Canvas 2D Preview",
+          webgl: "WebGL Preview",
+        }[et];
+        generateExport();
+        updateExportPreview();
       }
 
       // ══════════════════════════════════════════════
@@ -3509,7 +3634,7 @@
         const el = document.getElementById("layerList");
         if (S.shapes.length === 0) {
           el.innerHTML =
-            '<div class="empty-h">No layers yet.<br>Add a Path, Circle, or Stroke.</div>';
+            '<div class="empty-h">No layers yet.<br>Add a Path, Circle, Stroke, or Text.</div>';
           return;
         }
         el.innerHTML = S.shapes
@@ -3518,19 +3643,18 @@
           .map((sh) => {
             const a = sh.id === S.activeId;
             return `<div class="lrow${a ? " active" : ""}" data-act="sel" data-id="${sh.id}" draggable="true">
-      <span class="l-handle">⠿</span>
-      <button class="ibtn" data-act="vis" data-id="${sh.id}">${sh.visible ? "👁" : "⦰"}</button>
-      <span class="l-dot" style="background:${sh.color}"></span>
-      <span class="l-name">${esc(sh.name)}</span>
-      <span class="l-type">${sh.type}</span>
-      <button class="ibtn" data-act="dup" data-id="${sh.id}">⧉</button>
-      <button class="ibtn del" data-act="del" data-id="${sh.id}">✕</button>
-    </div>`;
+            <span class="l-handle">⠿</span>
+            <button class="ibtn" data-act="vis" data-id="${sh.id}">${sh.visible ? "👁" : "⦰"}</button>
+            <span class="l-dot" style="background:${sh.color}"></span>
+            <span class="l-name">${esc(sh.name)}</span>
+            <span class="l-type">${sh.type}</span>
+            <button class="ibtn" data-act="dup" data-id="${sh.id}">⧉</button>
+            <button class="ibtn del" data-act="del" data-id="${sh.id}">✕</button>
+          </div>`;
           })
           .join("");
         setupDnD();
       }
-
       let ddSrc = null;
       function setupDnD() {
         document.querySelectorAll(".lrow[draggable]").forEach((row) => {
@@ -3568,7 +3692,6 @@
           });
         });
       }
-
       document.getElementById("rp-layers").addEventListener("click", (e) => {
         const el = e.target.closest("[data-act]");
         if (!el) return;
@@ -3584,6 +3707,10 @@
         }
         if (act === "add-stroke") {
           addShape("freehand");
+          return;
+        }
+        if (act === "add-text") {
+          addShape("text");
           return;
         }
         if (act === "sel") {
@@ -3625,83 +3752,83 @@
           return;
         }
         const st = sh.stroke || mkStroke();
-        let h = `
-<div class="prop-h first">General</div>
-<div class="cr"><span class="cl">Name</span><input class="pinp" data-fld="name" value="${esc(sh.name)}"/></div>
-<div class="colr"><span class="coll">Color</span><span class="colh">${sh.color}</span><input type="color" data-fld="color" value="${sh.color}"/></div>
-<div class="togr"><span class="togl">Visible</span><input type="checkbox" data-fld="visible" ${sh.visible ? "checked" : ""}></div>
-${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><input type="checkbox" data-fld="closePath" ${sh.closePath ? "checked" : ""}></div>` : ""}
-<div class="prop-h">Transform</div>
-<div class="cr"><span class="cl">Offset X</span><input type="range" data-fld="offsetX" min="-1.5" max="1.5" step="0.01" value="${sh.offsetX}"><span class="cv">${f2(sh.offsetX)}</span></div>
-<div class="cr"><span class="cl">Offset Y</span><input type="range" data-fld="offsetY" min="-1.5" max="1.5" step="0.01" value="${sh.offsetY}"><span class="cv">${f2(sh.offsetY)}</span></div>
-<div class="cr"><span class="cl">Scale</span><input type="range" data-fld="scale" min="0.1" max="2.5" step="0.01" value="${sh.scale}"><span class="cv">${f2(sh.scale)}</span></div>
-<div class="cr"><span class="cl">Rotation</span><input type="range" data-fld="rotationDeg" min="-180" max="180" step="1" value="${sh.rotationDeg}"><span class="cv">${Math.round(sh.rotationDeg)}°</span></div>
-<div class="cr"><span class="cl">Repeat</span><input type="range" data-fld="repeatCount" min="1" max="16" step="1" value="${sh.repeatCount}"><span class="cv">${sh.repeatCount}</span></div>`;
+        const hasFill = sh.type !== "freehand";
+        let h = `<div class="prop-h first">General</div>
+      <div class="cr"><span class="cl">Name</span><input class="pinp" data-fld="name" value="${esc(sh.name)}"/></div>
+      ${hasFill ? `<div class="colr"><span class="coll">Color</span><span class="colh">${sh.color}</span><input type="color" data-fld="color" value="${sh.color}"/></div>` : ""}
+      <div class="togr"><span class="togl">Visible</span><input type="checkbox" data-fld="visible" ${sh.visible ? "checked" : ""}></div>
+      ${hasFill ? `<div class="togr"><span class="togl">Fill</span><input type="checkbox" data-fld="fill" ${sh.fill !== false ? "checked" : ""}></div>` : ""}
+      ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><input type="checkbox" data-fld="closePath" ${sh.closePath ? "checked" : ""}></div>` : ""}
+      <div class="prop-h">Transform</div>
+      <div class="cr"><span class="cl">Offset X</span><input type="range" data-fld="offsetX" min="-1.5" max="1.5" step="0.01" value="${sh.offsetX}"><span class="cv">${f2(sh.offsetX)}</span></div>
+      <div class="cr"><span class="cl">Offset Y</span><input type="range" data-fld="offsetY" min="-1.5" max="1.5" step="0.01" value="${sh.offsetY}"><span class="cv">${f2(sh.offsetY)}</span></div>
+      <div class="cr"><span class="cl">Scale</span><input type="range" data-fld="scale" min="0.1" max="2.5" step="0.01" value="${sh.scale}"><span class="cv">${f2(sh.scale)}</span></div>
+      <div class="cr"><span class="cl">Rotation</span><input type="range" data-fld="rotationDeg" min="-180" max="180" step="1" value="${sh.rotationDeg}"><span class="cv">${Math.round(sh.rotationDeg)}°</span></div>
+      <div class="cr"><span class="cl">Repeat</span><input type="range" data-fld="repeatCount" min="1" max="16" step="1" value="${sh.repeatCount}"><span class="cv">${sh.repeatCount}</span></div>`;
         if (sh.type === "circle") {
           h += `<div class="prop-h">Circle</div>
-<div class="cr"><span class="cl">Radius</span><input type="range" data-fld="radius" min="0" max="0.8" step="0.01" value="${sh.radius}"><span class="cv">${f2(sh.radius)}</span></div>
-<div class="cr"><span class="cl">Center X</span><input type="range" data-fld="circX" min="-1.2" max="1.2" step="0.01" value="${sh.x}"><span class="cv">${f2(sh.x)}</span></div>
-<div class="cr"><span class="cl">Center Y</span><input type="range" data-fld="circY" min="-1.2" max="1.2" step="0.01" value="${sh.y}"><span class="cv">${f2(sh.y)}</span></div>`;
+      <div class="cr"><span class="cl">Radius</span><input type="range" data-fld="radius" min="0" max="0.8" step="0.01" value="${sh.radius}"><span class="cv">${f2(sh.radius)}</span></div>
+      <div class="cr"><span class="cl">Center X</span><input type="range" data-fld="circX" min="-1.2" max="1.2" step="0.01" value="${sh.x}"><span class="cv">${f2(sh.x)}</span></div>
+      <div class="cr"><span class="cl">Center Y</span><input type="range" data-fld="circY" min="-1.2" max="1.2" step="0.01" value="${sh.y}"><span class="cv">${f2(sh.y)}</span></div>`;
+        }
+        if (sh.type === "text") {
+          h += `<div class="prop-h">Text</div>
+      <div class="cr"><span class="cl">Content</span><input class="pinp" data-fld="textContent" value="${esc(sh.text || "")}"/></div>
+      <div class="cr"><span class="cl">Font size</span><input type="range" data-fld="fontSize" min="0.05" max="0.8" step="0.01" value="${sh.fontSize || 0.2}"><span class="cv">${f2(sh.fontSize || 0.2)}</span></div>
+      <div class="cr"><span class="cl">Font</span><input class="pinp" data-fld="fontFamily" value="${esc(sh.fontFamily || "Arial")}" style="flex:1;width:auto"/></div>
+      <div class="cr"><span class="cl">Weight</span>
+        <select class="selinp" data-fld="fontWeight" style="flex:1">
+          <option value="normal" ${(sh.fontWeight || "bold") === "normal" ? "selected" : ""}>Normal</option>
+          <option value="bold" ${(sh.fontWeight || "bold") === "bold" ? "selected" : ""}>Bold</option>
+          <option value="900" ${sh.fontWeight === "900" ? "selected" : ""}>Black 900</option>
+        </select></div>
+      <div class="cr"><span class="cl">Align</span>
+        <select class="selinp" data-fld="textAlign" style="flex:1">
+          <option value="left" ${(sh.textAlign || "center") === "left" ? "selected" : ""}>Left</option>
+          <option value="center" ${(sh.textAlign || "center") === "center" ? "selected" : ""}>Center</option>
+          <option value="right" ${(sh.textAlign || "center") === "right" ? "selected" : ""}>Right</option>
+        </select></div>`;
         }
         h += `<div class="prop-h">Stroke</div>
-<div class="togr"><span class="togl">Enable</span><input type="checkbox" data-fld="strokeEnabled" ${st.enabled ? "checked" : ""}></div>
-<div class="colr"><span class="coll">Color</span><span class="colh">${st.color || "#fff"}</span><input type="color" data-fld="strokeColor" value="${st.color || "#ffffff"}"/></div>
-<div class="cr"><span class="cl">Width</span><input type="range" data-fld="strokeWidth" min="0.005" max="0.15" step="0.005" value="${st.width || 0.03}"><span class="cv">${f2(st.width || 0.03)}</span></div>
-<div class="cr"><span class="cl">Dash</span><select class="selinp" data-fld="strokeDash" style="flex:1">
-  <option value="solid" ${!st.dash || !st.dash.length ? "selected" : ""}>Solid</option>
-  <option value="dash" ${st.dash && st.dash.length === 2 && st.dash[0] === 4 ? "selected" : ""}>Dashed</option>
-  <option value="dot" ${st.dash && st.dash.length === 2 && st.dash[0] === 1 ? "selected" : ""}>Dotted</option>
-  <option value="dashdot" ${st.dash && st.dash.length === 4 ? "selected" : ""}>Dash·dot</option>
-</select></div>
-<div class="cr"><span class="cl">Cap / Join</span>
-  <select class="selinp" data-fld="strokeCap">
-    <option value="butt" ${st.cap === "butt" ? "selected" : ""}>Butt</option>
-    <option value="round" ${(st.cap || "round") === "round" ? "selected" : ""}>Round</option>
-    <option value="square" ${st.cap === "square" ? "selected" : ""}>Sq</option>
-  </select>
-  <select class="selinp" data-fld="strokeJoin">
-    <option value="miter" ${st.join === "miter" ? "selected" : ""}>Miter</option>
-    <option value="round" ${(st.join || "round") === "round" ? "selected" : ""}>Round</option>
-    <option value="bevel" ${st.join === "bevel" ? "selected" : ""}>Bevel</option>
-  </select>
-</div>`;
+      <div class="togr"><span class="togl">Enable</span><input type="checkbox" data-fld="strokeEnabled" ${st.enabled ? "checked" : ""}></div>
+      <div class="colr"><span class="coll">Color</span><span class="colh">${st.color || "#fff"}</span><input type="color" data-fld="strokeColor" value="${st.color || "#ffffff"}"/></div>
+      <div class="cr"><span class="cl">Width</span><input type="range" data-fld="strokeWidth" min="0.005" max="0.15" step="0.005" value="${st.width || 0.03}"><span class="cv">${f2(st.width || 0.03)}</span></div>
+      <div class="cr"><span class="cl">Dash</span><select class="selinp" data-fld="strokeDash" style="flex:1">
+        <option value="solid" ${!st.dash || !st.dash.length ? "selected" : ""}>Solid</option>
+        <option value="dash" ${st.dash && st.dash.length === 2 && st.dash[0] === 4 ? "selected" : ""}>Dashed</option>
+        <option value="dot" ${st.dash && st.dash.length === 2 && st.dash[0] === 1 ? "selected" : ""}>Dotted</option>
+        <option value="dashdot" ${st.dash && st.dash.length === 4 ? "selected" : ""}>Dash·dot</option>
+      </select></div>
+      <div class="cr"><span class="cl">Cap/Join</span>
+        <select class="selinp" data-fld="strokeCap"><option value="butt" ${st.cap === "butt" ? "selected" : ""}>Butt</option><option value="round" ${(st.cap || "round") === "round" ? "selected" : ""}>Round</option><option value="square" ${st.cap === "square" ? "selected" : ""}>Sq</option></select>
+        <select class="selinp" data-fld="strokeJoin"><option value="miter" ${st.join === "miter" ? "selected" : ""}>Miter</option><option value="round" ${(st.join || "round") === "round" ? "selected" : ""}>Round</option><option value="bevel" ${st.join === "bevel" ? "selected" : ""}>Bevel</option></select>
+      </div>`;
         if (sh.type === "path") {
           h += `<div class="prop-h">Points (${sh.nodes.length})</div>
-<div style="font-size:8.5px;color:var(--t3);margin-bottom:4px">Click canvas to add · Drag handles to adjust</div>`;
+      <div style="font-size:8.5px;color:var(--t3);margin-bottom:4px">Click canvas to add · Drag handles to adjust</div>`;
           sh.nodes.forEach((n, i) => {
             const sel = n.id === S.selNodeId;
             const segN = { M: "Move", L: "Line", Q: "Quad", C: "Cubic" };
             h += `<div class="node-row${sel ? " sel" : ""}" data-act="sel-node" data-id="${n.id}">
-        <span class="node-idx">#${i}</span>
-        <select class="nsel" data-nid="${n.id}" data-fld="nseg" ${i === 0 ? "disabled" : ""}>
-          ${Object.entries(segN)
-            .map(
-              ([k, v]) =>
-                `<option value="${k}" ${n.seg === k ? "selected" : ""}>${v}</option>`,
-            )
-            .join("")}
-        </select>
-        <input class="ninp" type="number" step="0.01" data-nid="${n.id}" data-fld="nx" value="${f2(n.x)}" title="x">
-        <input class="ninp" type="number" step="0.01" data-nid="${n.id}" data-fld="ny" value="${f2(n.y)}" title="y">
-        <button class="ibtn del" data-act="del-node" data-id="${n.id}" ${sh.nodes.length <= 1 ? "disabled" : ""}>✕</button>
-      </div>`;
+              <span class="node-idx">#${i}</span>
+              <select class="nsel" data-nid="${n.id}" data-fld="nseg" ${i === 0 ? "disabled" : ""}>${Object.entries(
+                segN,
+              )
+                .map(
+                  ([k, v]) =>
+                    `<option value="${k}" ${n.seg === k ? "selected" : ""}>${v}</option>`,
+                )
+                .join("")}</select>
+              <input class="ninp" type="number" step="0.01" data-nid="${n.id}" data-fld="nx" value="${f2(n.x)}" title="x">
+              <input class="ninp" type="number" step="0.01" data-nid="${n.id}" data-fld="ny" value="${f2(n.y)}" title="y">
+              <button class="ibtn del" data-act="del-node" data-id="${n.id}" ${sh.nodes.length <= 1 ? "disabled" : ""}>✕</button>
+            </div>`;
             if (n.seg === "Q" || n.seg === "C") {
-              h += `<div class="node-sub">
-          <span class="nsub-l" style="color:#f0c060">h1</span>
-          <input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c1x" value="${f2(n.cx1)}">
-          <input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c1y" value="${f2(n.cy1)}">
-          ${
-            n.seg === "C"
-              ? `<span class="nsub-l" style="color:#9070ff">h2</span>
-          <input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c2x" value="${f2(n.cx2)}">
-          <input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c2y" value="${f2(n.cy2)}">`
-              : ""
-          }</div>`;
+              h += `<div class="node-sub"><span class="nsub-l" style="color:#f0c060">h1</span><input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c1x" value="${f2(n.cx1)}"><input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c1y" value="${f2(n.cy1)}">${n.seg === "C" ? `<span class="nsub-l" style="color:#9070ff">h2</span><input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c2x" value="${f2(n.cx2)}"><input class="nsub-i" type="number" step="0.01" data-nid="${n.id}" data-fld="c2y" value="${f2(n.cy2)}">` : ""}</div>`;
             }
           });
         } else if (sh.type === "freehand") {
-          h += `<div class="prop-h">Freehand (${sh.points ? sh.points.length : 0} pts)</div>
-<div style="font-size:8.5px;color:var(--t3)">Select Freehand tool and draw on canvas.</div>`;
+          h += `<div class="prop-h">Freehand (${sh.points ? sh.points.length : 0} pts)</div><div style="font-size:8.5px;color:var(--t3)">Select Freehand tool and draw on canvas.</div>`;
         }
         el.innerHTML = h;
       }
@@ -3762,84 +3889,116 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
             n[k] = parseFloat(t.value) || 0;
             redraw();
           }
-        } else if (sh) {
-          if (fld.startsWith("stroke")) {
-            if (!sh.stroke) sh.stroke = mkStroke();
-            const st = sh.stroke;
-            if (fld === "strokeEnabled") {
-              st.enabled = t.checked;
-              hPush();
-              redraw();
-            } else if (fld === "strokeColor") {
-              st.color = t.value;
-              t.parentElement.querySelector(".colh").textContent = t.value;
-              redraw();
-            } else if (fld === "strokeWidth") {
-              st.width = parseFloat(t.value);
-              syncRng(t);
-              redraw();
-            } else if (fld === "strokeDash") {
-              st.dash =
-                { solid: [], dash: [4, 2], dot: [1, 2], dashdot: [4, 2, 1, 2] }[
-                  t.value
-                ] || [];
-              redraw();
-              hPush();
-            } else if (fld === "strokeCap") {
-              st.cap = t.value;
-              redraw();
-              hPush();
-            } else if (fld === "strokeJoin") {
-              st.join = t.value;
-              redraw();
-              hPush();
-            }
-          } else {
-            if (fld === "name") {
-              sh.name = t.value;
-              const el = document.querySelector(
-                `.lrow[data-id="${sh.id}"] .l-name`,
-              );
-              if (el) el.textContent = sh.name;
-            } else if (fld === "color") {
-              sh.color = t.value;
-              t.parentElement.querySelector(".colh").textContent = t.value;
-              const d = document.querySelector(
-                `.lrow[data-id="${sh.id}"] .l-dot`,
-              );
-              if (d) d.style.background = t.value;
-              redraw();
-            } else if (fld === "visible") {
-              sh.visible = t.checked;
-              redraw();
-            } else if (fld === "closePath") {
-              sh.closePath = t.checked;
-              redraw();
-            } else {
-              const maps = {
-                offsetX: "offsetX",
-                offsetY: "offsetY",
-                scale: "scale",
-                rotationDeg: "rotationDeg",
-                repeatCount: "repeatCount",
-                radius: "radius",
-                circX: "x",
-                circY: "y",
-              };
-              if (maps[fld] !== undefined) {
-                sh[maps[fld]] =
-                  fld === "repeatCount"
-                    ? parseInt(t.value)
-                    : parseFloat(t.value);
-                syncRng(t);
-                redraw();
-              }
-            }
+          return;
+        }
+        if (!sh) return;
+        if (fld.startsWith("stroke")) {
+          if (!sh.stroke) sh.stroke = mkStroke();
+          const st = sh.stroke;
+          if (fld === "strokeEnabled") {
+            st.enabled = t.checked;
+            hPush();
+            redraw();
+          } else if (fld === "strokeColor") {
+            st.color = t.value;
+            t.parentElement.querySelector(".colh").textContent = t.value;
+            redraw();
+          } else if (fld === "strokeWidth") {
+            st.width = parseFloat(t.value);
+            syncRng(t);
+            redraw();
+          } else if (fld === "strokeDash") {
+            st.dash =
+              { solid: [], dash: [4, 2], dot: [1, 2], dashdot: [4, 2, 1, 2] }[
+                t.value
+              ] || [];
+            redraw();
+            hPush();
+          } else if (fld === "strokeCap") {
+            st.cap = t.value;
+            redraw();
+            hPush();
+          } else if (fld === "strokeJoin") {
+            st.join = t.value;
+            redraw();
+            hPush();
           }
+          return;
         }
-        if (e.type === "change") {
-          hPush();
+        if (fld === "name") {
+          sh.name = t.value;
+          const el = document.querySelector(
+            `.lrow[data-id="${sh.id}"] .l-name`,
+          );
+          if (el) el.textContent = sh.name;
+          return;
         }
+        if (fld === "color") {
+          sh.color = t.value;
+          t.parentElement.querySelector(".colh").textContent = t.value;
+          const d = document.querySelector(`.lrow[data-id="${sh.id}"] .l-dot`);
+          if (d) d.style.background = t.value;
+          redraw();
+          return;
+        }
+        if (fld === "visible") {
+          sh.visible = t.checked;
+          redraw();
+          return;
+        }
+        if (fld === "fill") {
+          sh.fill = t.checked;
+          redraw();
+          return;
+        }
+        if (fld === "closePath") {
+          sh.closePath = t.checked;
+          redraw();
+          return;
+        }
+        if (fld === "textContent") {
+          sh.text = t.value;
+          redraw();
+          return;
+        }
+        if (fld === "fontFamily") {
+          sh.fontFamily = t.value;
+          redraw();
+          return;
+        }
+        if (fld === "fontWeight") {
+          sh.fontWeight = t.value;
+          redraw();
+          return;
+        }
+        if (fld === "textAlign") {
+          sh.textAlign = t.value;
+          redraw();
+          return;
+        }
+        if (fld === "fontSize") {
+          sh.fontSize = parseFloat(t.value);
+          syncRng(t);
+          redraw();
+          return;
+        }
+        const maps = {
+          offsetX: "offsetX",
+          offsetY: "offsetY",
+          scale: "scale",
+          rotationDeg: "rotationDeg",
+          repeatCount: "repeatCount",
+          radius: "radius",
+          circX: "x",
+          circY: "y",
+        };
+        if (maps[fld] !== undefined) {
+          sh[maps[fld]] =
+            fld === "repeatCount" ? parseInt(t.value) : parseFloat(t.value);
+          syncRng(t);
+          redraw();
+        }
+        if (e.type === "change") hPush();
       }
       function syncRng(t) {
         if (t.type !== "range") return;
@@ -3848,11 +4007,654 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       }
 
       // ══════════════════════════════════════════════
-      //  AI TRACE — IMAGE → SHAPE
+      //  EXPORT CODE GENERATION — FIXED MATH
+      //  Key insight: in localToScreen we do:
+      //    worldX = cx + s * (lx*sc*cos - ly*sc*sin + offsetX)
+      //    worldY = cy + s * (lx*sc*sin + ly*sc*cos + offsetY)
+      //  So exported code must:
+      //    r(lx, ly) = (lx*sc*cos - ly*sc*sin + offsetX) * s + center
+      //              = rotate(lx*sc, ly*sc, rot) + offset*s + center
       // ══════════════════════════════════════════════
-      let aiImg = null,
-        aiImgData = null;
+      function colStr(c) {
+        if (!c || c.length < 4) return '"#000000"';
+        return `"${c}"`;
+      } // for canvas/webgl
+      function hexStr(c) {
+        if (!c || c.length < 4) return "0x000000";
+        return "0x" + c.replace("#", "").toUpperCase();
+      }
+      function degToRad(d) {
+        return ((parseFloat(d) || 0) * Math.PI) / 180;
+      }
+      function fmtRot(deg) {
+        const d = parseFloat(deg) || 0;
+        if (d === 0) return "0";
+        if (d === -90) return "-Math.PI/2";
+        if (d === 90) return "Math.PI/2";
+        if (Math.abs(d) === 180) return "Math.PI";
+        return ((d * Math.PI) / 180).toFixed(5);
+      }
 
+      function generateExport() {
+        const target = S.exportTarget || "pixi";
+        let code = "";
+        if (target === "pixi") code = genPixi();
+        else if (target === "canvas") code = genCanvas2D();
+        else if (target === "webgl") code = genWebGL();
+        renderExportCode(code);
+      }
+      function getExportCode() {
+        return (
+          document.getElementById("exportOut").innerText ||
+          document.getElementById("exportOut").textContent ||
+          ""
+        );
+      }
+
+      // ─── PIXI.JS EXPORT ───
+      function genPixi() {
+        const key = S.shapeKey || "PETALS.YOUR_PETAL";
+        const L = [];
+        L.push(`// PixiJS Graphics — auto-generated by Shape Editor Pro v6`);
+        L.push(`// Usage: drawShape(graphics, 140); // size in pixels`);
+        L.push(`[${key}]: ($: PIXI.Graphics, size: number): void => {`);
+        L.push(`    const half = size / 2;`);
+        L.push(
+          `    // rot2d: rotate + scale a local coord, then add offset, all in pixel space`,
+        );
+        L.push(
+          `    // lx,ly in normalized [-1..1], sc=scale, rot=radians, ox/oy=offset*half`,
+        );
+        L.push(
+          `    const rot2d = (lx: number, ly: number, sc: number, rot: number, ox: number, oy: number): [number, number] => {`,
+        );
+        L.push(`        const cos = Math.cos(rot), sin = Math.sin(rot);`);
+        L.push(`        return [`);
+        L.push(`            ox + (lx * sc * cos - ly * sc * sin) * half,`);
+        L.push(`            oy + (lx * sc * sin + ly * sc * cos) * half,`);
+        L.push(`        ];`);
+        L.push(`    };`);
+        if (!S.shapes.length) {
+          L.push(`    // No layers`);
+          L.push(`},`);
+          return L.join("\n");
+        }
+        for (const sh of S.shapes) {
+          if (!sh.visible) continue;
+          const reps = Math.max(1, Math.round(sh.repeatCount || 1));
+          const sc = parseFloat(sh.scale) || 1;
+          const rotBase = fmtRot(sh.rotationDeg);
+          const ox = `${f3(sh.offsetX || 0)} * half`;
+          const oy = `${f3(sh.offsetY || 0)} * half`;
+          L.push(`\n    // ${sh.name} (${sh.type})`);
+          L.push(`    for (let _i = 0; _i < ${reps}; _i++) {`);
+          if (reps > 1)
+            L.push(
+              `        const _rot = ${rotBase} + _i * (Math.PI * 2 / ${reps});`,
+            );
+          else L.push(`        const _rot = ${rotBase};`);
+          L.push(`        const _ox = ${ox};`);
+          L.push(`        const _oy = ${oy};`);
+          L.push(
+            `        const r = (lx: number, ly: number) => rot2d(lx, ly, ${f3(sc)}, _rot, _ox, _oy);`,
+          );
+          if (sh.type === "path" && sh.nodes && sh.nodes.length) {
+            const col = hexStr(sh.color);
+            if (sh.fill !== false) L.push(`        $.beginFill(${col});`);
+            else L.push(`        $.beginFill(0x000000, 0);`);
+            sh.nodes.forEach((n, i) => {
+              const lx = f3(n.x),
+                ly = f3(n.y);
+              if (i === 0 || n.seg === "M")
+                L.push(`        $.moveTo(...r(${lx}, ${ly}));`);
+              else if (n.seg === "L")
+                L.push(`        $.lineTo(...r(${lx}, ${ly}));`);
+              else if (n.seg === "Q")
+                L.push(
+                  `        $.quadraticCurveTo(...r(${f3(n.cx1)}, ${f3(n.cy1)}), ...r(${lx}, ${ly}));`,
+                );
+              else if (n.seg === "C")
+                L.push(
+                  `        $.bezierCurveTo(...r(${f3(n.cx1)}, ${f3(n.cy1)}), ...r(${f3(n.cx2)}, ${f3(n.cy2)}), ...r(${lx}, ${ly}));`,
+                );
+            });
+            if (sh.closePath) L.push(`        $.closePath();`);
+            L.push(`        $.endFill();`);
+            if (sh.stroke && sh.stroke.enabled)
+              L.push(
+                `        $.lineStyle(${f3(sh.stroke.width || 0.03)} * half, ${hexStr(sh.stroke.color || sh.color)}, 1);`,
+              );
+          } else if (sh.type === "circle") {
+            const col = hexStr(sh.color);
+            const [,] = [sh.x, sh.y]; // used in r()
+            L.push(`        const [_cx, _cy] = r(${f3(sh.x)}, ${f3(sh.y)});`);
+            L.push(`        const _r = ${f3(sc)} * ${f3(sh.radius)} * half;`);
+            if (sh.fill !== false) L.push(`        $.beginFill(${col});`);
+            else L.push(`        $.beginFill(0x000000, 0);`);
+            L.push(`        $.drawCircle(_cx, _cy, _r);`);
+            L.push(`        $.endFill();`);
+            if (sh.stroke && sh.stroke.enabled)
+              L.push(
+                `        $.lineStyle(${f3(sh.stroke.width || 0.03)} * half, ${hexStr(sh.stroke.color || sh.color)}, 1);`,
+              );
+          } else if (
+            sh.type === "freehand" &&
+            sh.points &&
+            sh.points.length > 1
+          ) {
+            L.push(
+              `        $.lineStyle(${f3(sh.stroke.width || 0.04)} * half, ${hexStr(sh.stroke.color || sh.color)}, 1);`,
+            );
+            sh.points.forEach(([x, y], i) => {
+              if (i === 0)
+                L.push(`        $.moveTo(...r(${f3(x)}, ${f3(y)}));`);
+              else L.push(`        $.lineTo(...r(${f3(x)}, ${f3(y)}));`);
+            });
+          } else if (sh.type === "text") {
+            L.push(`        // Text layer: use PIXI.Text separately`);
+            L.push(
+              `        // text: "${sh.text || ""}", font: ${sh.fontFamily || "Arial"} ${sh.fontWeight || "bold"} ${f3(sh.fontSize || 0.2)}*size`,
+            );
+            L.push(
+              `        // position: r(0, 0) = [_ox, _oy] (at rotation ${sh.rotationDeg}°)`,
+            );
+          }
+          L.push(`    }`);
+        }
+        L.push(`},`);
+        return L.join("\n");
+      }
+
+      // ─── CANVAS 2D EXPORT ───
+      function genCanvas2D() {
+        const L = [];
+        L.push(`// Canvas 2D — auto-generated by Shape Editor Pro v6`);
+        L.push(`// Usage: drawShape(ctx, centerX, centerY, size);`);
+        L.push(
+          `function drawShape(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number): void {`,
+        );
+        L.push(`    const half = size / 2;`);
+        L.push(
+          `    const rot2d = (lx: number, ly: number, sc: number, rot: number, ox: number, oy: number): [number, number] => {`,
+        );
+        L.push(`        const cos = Math.cos(rot), sin = Math.sin(rot);`);
+        L.push(`        return [`);
+        L.push(`            cx + ox + (lx * sc * cos - ly * sc * sin) * half,`);
+        L.push(`            cy + oy + (lx * sc * sin + ly * sc * cos) * half,`);
+        L.push(`        ];`);
+        L.push(`    };`);
+        if (!S.shapes.length) {
+          L.push(`    // No layers`);
+          L.push(`}`);
+          return L.join("\n");
+        }
+        // Draw back-to-front (shapes array is bottom-to-top)
+        for (let si = 0; si < S.shapes.length; si++) {
+          const sh = S.shapes[si];
+          if (!sh.visible) continue;
+          const reps = Math.max(1, Math.round(sh.repeatCount || 1));
+          const sc = parseFloat(sh.scale) || 1;
+          const rotBase = fmtRot(sh.rotationDeg);
+          const ox = `${f3(sh.offsetX || 0)} * half`;
+          const oy = `${f3(sh.offsetY || 0)} * half`;
+          L.push(`\n    // ${sh.name}`);
+          L.push(`    for (let _i = 0; _i < ${reps}; _i++) {`);
+          if (reps > 1)
+            L.push(
+              `        const _rot = ${rotBase} + _i * (Math.PI * 2 / ${reps});`,
+            );
+          else L.push(`        const _rot = ${rotBase};`);
+          L.push(`        const _ox = ${ox};`);
+          L.push(`        const _oy = ${oy};`);
+          L.push(
+            `        const r = (lx: number, ly: number) => rot2d(lx, ly, ${f3(sc)}, _rot, _ox, _oy);`,
+          );
+          if (sh.type === "path" && sh.nodes && sh.nodes.length) {
+            if (sh.stroke && sh.stroke.enabled) {
+              L.push(
+                `        ctx.strokeStyle = "${sh.stroke.color || sh.color}";`,
+              );
+              L.push(
+                `        ctx.lineWidth = ${f3(sh.stroke.width || 0.03)} * size;`,
+              );
+              L.push(`        ctx.lineCap = "${sh.stroke.cap || "round"}";`);
+              L.push(`        ctx.lineJoin = "${sh.stroke.join || "round"}";`);
+            }
+            if (sh.fill !== false)
+              L.push(`        ctx.fillStyle = "${sh.color}";`);
+            L.push(`        ctx.beginPath();`);
+            sh.nodes.forEach((n, i) => {
+              const lx = f3(n.x),
+                ly = f3(n.y);
+              if (i === 0 || n.seg === "M")
+                L.push(`        ctx.moveTo(...r(${lx}, ${ly}));`);
+              else if (n.seg === "L")
+                L.push(`        ctx.lineTo(...r(${lx}, ${ly}));`);
+              else if (n.seg === "Q")
+                L.push(
+                  `        ctx.quadraticCurveTo(...r(${f3(n.cx1)}, ${f3(n.cy1)}), ...r(${lx}, ${ly}));`,
+                );
+              else if (n.seg === "C")
+                L.push(
+                  `        ctx.bezierCurveTo(...r(${f3(n.cx1)}, ${f3(n.cy1)}), ...r(${f3(n.cx2)}, ${f3(n.cy2)}), ...r(${lx}, ${ly}));`,
+                );
+            });
+            if (sh.closePath) L.push(`        ctx.closePath();`);
+            if (sh.fill !== false) L.push(`        ctx.fill();`);
+            if (sh.stroke && sh.stroke.enabled) L.push(`        ctx.stroke();`);
+          } else if (sh.type === "circle") {
+            L.push(`        const [_cx2, _cy2] = r(${f3(sh.x)}, ${f3(sh.y)});`);
+            L.push(`        const _r2 = ${f3(sc)} * ${f3(sh.radius)} * half;`);
+            L.push(`        ctx.beginPath();`);
+            L.push(`        ctx.arc(_cx2, _cy2, _r2, 0, Math.PI * 2);`);
+            if (sh.fill !== false) {
+              L.push(`        ctx.fillStyle = "${sh.color}";`);
+              L.push(`        ctx.fill();`);
+            }
+            if (sh.stroke && sh.stroke.enabled) {
+              L.push(
+                `        ctx.strokeStyle = "${sh.stroke.color || sh.color}";`,
+              );
+              L.push(
+                `        ctx.lineWidth = ${f3(sh.stroke.width || 0.03)} * size;`,
+              );
+              L.push(`        ctx.stroke();`);
+            }
+          } else if (
+            sh.type === "freehand" &&
+            sh.points &&
+            sh.points.length > 1
+          ) {
+            L.push(`        ctx.beginPath();`);
+            L.push(
+              `        ctx.strokeStyle = "${sh.stroke.color || sh.color}";`,
+            );
+            L.push(
+              `        ctx.lineWidth = ${f3(sh.stroke.width || 0.04)} * size;`,
+            );
+            L.push(`        ctx.lineCap = "round"; ctx.lineJoin = "round";`);
+            sh.points.forEach(([x, y], i) => {
+              if (i === 0)
+                L.push(`        ctx.moveTo(...r(${f3(x)}, ${f3(y)}));`);
+              else L.push(`        ctx.lineTo(...r(${f3(x)}, ${f3(y)}));`);
+            });
+            L.push(`        ctx.stroke();`);
+          } else if (sh.type === "text") {
+            L.push(`        const [_tx, _ty] = r(0, 0);`);
+            const fs = sh.fontSize || 0.2;
+            L.push(
+              `        ctx.font = "${sh.fontWeight || "bold"} " + Math.round(${f3(fs)} * size) + "px ${sh.fontFamily || "Arial"}";`,
+            );
+            L.push(`        ctx.fillStyle = "${sh.color}";`);
+            L.push(`        ctx.textAlign = "${sh.textAlign || "center"}";`);
+            L.push(
+              `        ctx.textBaseline = "${sh.textBaseline || "middle"}";`,
+            );
+            if (sh.fill !== false)
+              L.push(
+                `        ctx.fillText("${(sh.text || "").replace(/"/g, '\\"')}", _tx, _ty);`,
+              );
+            if (sh.stroke && sh.stroke.enabled) {
+              L.push(
+                `        ctx.strokeStyle = "${sh.stroke.color || sh.color}";`,
+              );
+              L.push(
+                `        ctx.lineWidth = ${f3(sh.stroke.width || 0.03)} * size;`,
+              );
+              L.push(
+                `        ctx.strokeText("${(sh.text || "").replace(/"/g, '\\"')}", _tx, _ty);`,
+              );
+            }
+          }
+          L.push(`    }`);
+        }
+        L.push(`}`);
+        return L.join("\n");
+      }
+
+      // ─── WEBGL GLSL EXPORT ───
+      // Generates a GLSL fragment shader that draws the shape as an SDF approximation
+      function genWebGL() {
+        const L = [];
+        L.push(
+          `// WebGL GLSL Fragment Shader — auto-generated by Shape Editor Pro v6`,
+        );
+        L.push(`// Bind as fragment shader. Pass u_resolution, u_time.`);
+        L.push(
+          `// Shape is rendered via signed distance field (SDF) approximation.`,
+        );
+        L.push(`precision mediump float;`);
+        L.push(`uniform vec2 u_resolution;`);
+        L.push(`uniform float u_time;`);
+        L.push(``);
+        L.push(`// Rotate a 2D point by angle`);
+        L.push(`vec2 rot2d(vec2 p, float a) {`);
+        L.push(`    float c = cos(a), s = sin(a);`);
+        L.push(`    return vec2(p.x * c - p.y * s, p.x * s + p.y * c);`);
+        L.push(`}`);
+        L.push(``);
+        L.push(`// SDF for line segment`);
+        L.push(`float sdSeg(vec2 p, vec2 a, vec2 b) {`);
+        L.push(`    vec2 pa = p - a, ba = b - a;`);
+        L.push(`    float h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);`);
+        L.push(`    return length(pa - ba * h);`);
+        L.push(`}`);
+        L.push(``);
+        L.push(`// SDF for circle`);
+        L.push(
+          `float sdCircle(vec2 p, vec2 c, float r) { return length(p - c) - r; }`,
+        );
+        L.push(``);
+        L.push(`void main() {`);
+        L.push(
+          `    vec2 uv = (gl_FragCoord.xy - u_resolution * 0.5) / min(u_resolution.x, u_resolution.y);`,
+        );
+        L.push(`    vec3 color = vec3(0.05, 0.06, 0.10); // background`);
+        L.push(`    float aa = 0.004; // anti-alias edge width`);
+        L.push(``);
+        if (!S.shapes.length) {
+          L.push(`    gl_FragColor = vec4(color, 1.0);`);
+          L.push(`}`);
+          return L.join("\n");
+        }
+        for (const sh of S.shapes) {
+          if (!sh.visible) continue;
+          const reps = Math.max(1, Math.round(sh.repeatCount || 1));
+          const sc = parseFloat(sh.scale) || 1;
+          const r = parseFloat(sh.rotationDeg) || 0;
+          const ox = parseFloat(sh.offsetX) || 0,
+            oy = parseFloat(sh.offsetY) || 0;
+          const col = sh.color || "#ffffff";
+          const rgb = hexToRGB01(col);
+          L.push(`    // ${sh.name}`);
+          if (reps > 1) {
+            L.push(`    for (int _i = 0; _i < ${reps}; _i++) {`);
+            L.push(
+              `        float _rot = ${fmtRot(sh.rotationDeg)} + float(_i) * (6.28318 / float(${reps}));`,
+            );
+          } else L.push(`    { float _rot = ${fmtRot(sh.rotationDeg)};`);
+          L.push(`        vec2 _off = vec2(${f3(ox)}, ${f3(oy)});`);
+          L.push(`        float _sc = ${f3(sc)};`);
+          L.push(`        // Transform uv into this layer's local space`);
+          L.push(`        vec2 _p = rot2d((uv - _off) / _sc, -_rot);`);
+          if (sh.type === "circle") {
+            L.push(
+              `        float _d = sdCircle(_p, vec2(${f3(sh.x)}, ${f3(sh.y)}), ${f3(sh.radius)});`,
+            );
+            L.push(`        float _m = 1.0 - smoothstep(-aa, aa, _d);`);
+            L.push(`        color = mix(color, vec3(${rgb}), _m);`);
+          } else if (sh.type === "path" && sh.nodes && sh.nodes.length > 1) {
+            // Approximate path as segments for SDF
+            L.push(`        float _d = 1e9;`);
+            const nodes = sh.nodes;
+            for (let ni = 1; ni < nodes.length; ni++) {
+              const a = nodes[ni - 1],
+                b = nodes[ni];
+              L.push(
+                `        _d = min(_d, sdSeg(_p, vec2(${f3(a.x)},${f3(a.y)}), vec2(${f3(b.x)},${f3(b.y)})));`,
+              );
+            }
+            if (sh.closePath && nodes.length > 2) {
+              const a = nodes[nodes.length - 1],
+                b = nodes[0];
+              L.push(
+                `        _d = min(_d, sdSeg(_p, vec2(${f3(a.x)},${f3(a.y)}), vec2(${f3(b.x)},${f3(b.y)})));`,
+              );
+            }
+            L.push(
+              `        float _sw = ${f3(sh.stroke && sh.stroke.enabled ? sh.stroke.width : 0.05)};`,
+            );
+            L.push(
+              `        float _m = 1.0 - smoothstep(-aa, aa, _d - _sw * 0.5);`,
+            );
+            L.push(`        color = mix(color, vec3(${rgb}), _m);`);
+          }
+          L.push(`    }`);
+        }
+        L.push(``);
+        L.push(`    gl_FragColor = vec4(color, 1.0);`);
+        L.push(`}`);
+        return L.join("\n");
+      }
+
+      function hexToRGB01(hex) {
+        hex = hex.replace("#", "");
+        if (hex.length === 3)
+          hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        const r = parseInt(hex.slice(0, 2), 16) / 255,
+          g = parseInt(hex.slice(2, 4), 16) / 255,
+          b = parseInt(hex.slice(4, 6), 16) / 255;
+        return `${r.toFixed(3)}, ${g.toFixed(3)}, ${b.toFixed(3)}`;
+      }
+
+      function renderExportCode(src){
+        let h=src.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        
+        h=h.replace(/(\/\/.*)/g,"<span class='c'>$1</span>");
+        h=h.replace(/\b(const|let|for|return|number|float|vec2|vec3|void|uniform|precision|mediump|int|function)\b/g,"<span class='k'>$1</span>");
+        h=h.replace(/(0x[0-9A-Fa-f]+)/g,"<span class='n'>$1</span>");
+        h=h.replace(/\b(-?\d+\.\d{2,})\b/g,"<span class='n'>$1</span>");
+        
+        h=h.replace(/("(?:[^"\\]|\\.)*")/g,"<span class='s'>$1</span>");
+        
+        h=h.replace(/\b(Math\.\w+|rot2d|bezierCurveTo|quadraticCurveTo|lineTo|moveTo|beginFill|endFill|closePath|drawCircle|lineStyle|beginPath|fill|stroke|fillText|strokeText|arc|sdCircle|sdSeg|smoothstep|mix|length|cos|sin|dot|clamp|min|max)\b/g,"<span class='f'>$1</span>");
+        
+        document.getElementById("exportOut").innerHTML=h;
+      }
+
+      // ─── EXPORT PREVIEW (mini canvas) ───
+      function updateExportPreview() {
+        const cv = document.getElementById("previewCanvas");
+        if (!cv) return;
+        const W = cv.width,
+          H = cv.height;
+        const pc = cv.getContext("2d");
+        pc.clearRect(0, 0, W, H);
+        // Dark background
+        pc.fillStyle = "#08080f";
+        pc.fillRect(0, 0, W, H);
+        if (S.exportTarget === "webgl") {
+          drawWebGLPreview(pc, W, H);
+          return;
+        }
+        // For pixi and canvas2d preview: just draw shapes using correct math
+        const centerX = W / 2,
+          centerY = H / 2,
+          previewHalf = Math.min(W, H) * 0.35;
+        function lts(sh, lx, ly, rep = 0) {
+          const reps = Math.max(1, Math.round(sh.repeatCount || 1));
+          const rot =
+            (((sh.rotationDeg || 0) + rep * (360 / reps)) * Math.PI) / 180;
+          const C = Math.cos(rot),
+            SN = Math.sin(rot),
+            sc = sh.scale || 1;
+          const rx = lx * sc * C - ly * sc * SN,
+            ry = lx * sc * SN + ly * sc * C;
+          return [
+            centerX + previewHalf * (rx + (sh.offsetX || 0)),
+            centerY + previewHalf * (ry + (sh.offsetY || 0)),
+          ];
+        }
+        for (const sh of S.shapes) {
+          if (!sh.visible) continue;
+          const reps = S.showRepeats
+            ? Math.max(1, Math.round(sh.repeatCount || 1))
+            : 1;
+          for (let ri = 0; ri < reps; ri++) {
+            pc.save();
+            if (sh.type === "path" && sh.nodes && sh.nodes.length) {
+              pc.beginPath();
+              sh.nodes.forEach((n, i) => {
+                const [ax, ay] = lts(sh, n.x, n.y, ri);
+                if (i === 0 || n.seg === "M") {
+                  pc.moveTo(ax, ay);
+                  return;
+                }
+                if (n.seg === "L") pc.lineTo(ax, ay);
+                else if (n.seg === "Q") {
+                  const [hx, hy] = lts(sh, n.cx1, n.cy1, ri);
+                  pc.quadraticCurveTo(hx, hy, ax, ay);
+                } else if (n.seg === "C") {
+                  const [h1x, h1y] = lts(sh, n.cx1, n.cy1, ri);
+                  const [h2x, h2y] = lts(sh, n.cx2, n.cy2, ri);
+                  pc.bezierCurveTo(h1x, h1y, h2x, h2y, ax, ay);
+                }
+              });
+              if (sh.closePath) pc.closePath();
+              if (sh.fill !== false) {
+                pc.fillStyle = sh.color;
+                pc.fill();
+              }
+              if (sh.stroke && sh.stroke.enabled) {
+                pc.strokeStyle = sh.stroke.color || sh.color;
+                pc.lineWidth = Math.max(
+                  0.5,
+                  (sh.stroke.width || 0.03) * previewHalf * 2 * (sh.scale || 1),
+                );
+                pc.lineCap = sh.stroke.cap || "round";
+                pc.lineJoin = sh.stroke.join || "round";
+                pc.stroke();
+              }
+            } else if (sh.type === "circle") {
+              const [px, py] = lts(sh, sh.x, sh.y, ri);
+              const rad = (sh.scale || 1) * sh.radius * previewHalf;
+              pc.beginPath();
+              pc.arc(px, py, Math.max(0, rad), 0, Math.PI * 2);
+              if (sh.fill !== false) {
+                pc.fillStyle = sh.color;
+                pc.fill();
+              }
+              if (sh.stroke && sh.stroke.enabled) {
+                pc.strokeStyle = sh.stroke.color || sh.color;
+                pc.lineWidth = Math.max(
+                  0.5,
+                  (sh.stroke.width || 0.03) * previewHalf * 2,
+                );
+                pc.stroke();
+              }
+            } else if (sh.type === "text") {
+              if (ri > 0) {
+              } else {
+                const [px, py] = lts(sh, 0, 0, 0);
+                const fs =
+                  (sh.fontSize || 0.2) * (sh.scale || 1) * previewHalf * 2;
+                pc.font = `${sh.fontWeight || "bold"} ${Math.max(4, fs)}px ${sh.fontFamily || "Arial"}`;
+                pc.fillStyle = sh.color;
+                pc.textAlign = sh.textAlign || "center";
+                pc.textBaseline = sh.textBaseline || "middle";
+                if (sh.fill !== false) pc.fillText(sh.text || "", px, py);
+              }
+            }
+            pc.restore();
+          }
+        }
+        // Label
+        pc.fillStyle = "rgba(82,114,240,.6)";
+        pc.font = "8px monospace";
+        pc.textAlign = "left";
+        pc.textBaseline = "top";
+        pc.fillText(S.exportTarget === "pixi" ? "PixiJS" : "Canvas 2D", 4, 4);
+      }
+      function drawWebGLPreview(pc, W, H) {
+        // CPU-side SDF approximation preview for WebGL shader
+        const img = pc.createImageData(W, H);
+        const d = img.data;
+        for (let py = 0; py < H; py++) {
+          for (let px = 0; px < W; px++) {
+            const ux = (px - W / 2) / Math.min(W, H);
+            const uy = (py - H / 2) / Math.min(W, H);
+            let r = 13,
+              g = 15,
+              b = 26; // dark bg
+            for (const sh of S.shapes) {
+              if (!sh.visible) continue;
+              const reps = Math.max(1, Math.round(sh.repeatCount || 1));
+              for (let ri = 0; ri < reps; ri++) {
+                const rotDeg = (sh.rotationDeg || 0) + ri * (360 / reps);
+                const rot = (rotDeg * Math.PI) / 180;
+                const ox = sh.offsetX || 0,
+                  oy = sh.offsetY || 0,
+                  sc = sh.scale || 1;
+                const cos = Math.cos(-rot),
+                  sin = Math.sin(-rot);
+                const lx = ((ux - ox) * cos - (uy - oy) * sin) / sc;
+                const ly = ((ux - ox) * sin + (uy - oy) * cos) / sc;
+                const col = hexToRGBArr(sh.color || "#fff");
+                if (sh.type === "circle") {
+                  const d2 =
+                    Math.hypot(lx - sh.x, ly - sh.y) - (sh.radius || 0.2);
+                  const m = Math.max(0, 1 - d2 / 0.005);
+                  r = Math.round(r * (1 - m) + col[0] * m);
+                  g = Math.round(g * (1 - m) + col[1] * m);
+                  b = Math.round(b * (1 - m) + col[2] * m);
+                } else if (
+                  sh.type === "path" &&
+                  sh.nodes &&
+                  sh.nodes.length > 1
+                ) {
+                  let minD = 1e9;
+                  const ns = sh.nodes;
+                  for (let ni = 1; ni < ns.length; ni++) {
+                    const ax = ns[ni - 1].x,
+                      ay = ns[ni - 1].y,
+                      bx = ns[ni].x,
+                      by_ = ns[ni].y;
+                    const pa = [lx - ax, ly - ay],
+                      ba = [bx - ax, by_ - ay];
+                    const t = Math.max(
+                      0,
+                      Math.min(
+                        1,
+                        (pa[0] * ba[0] + pa[1] * ba[1]) /
+                          (ba[0] * ba[0] + ba[1] * ba[1] + 1e-9),
+                      ),
+                    );
+                    const proj = [ax + ba[0] * t, ay + ba[1] * t];
+                    minD = Math.min(
+                      minD,
+                      Math.hypot(lx - proj[0], ly - proj[1]),
+                    );
+                  }
+                  const sw =
+                    (sh.stroke && sh.stroke.enabled ? sh.stroke.width : 0.04) *
+                    0.5;
+                  const dd = minD - sw;
+                  const m2 = Math.max(0, 1 - dd / 0.005);
+                  r = Math.round(r * (1 - m2) + col[0] * m2);
+                  g = Math.round(g * (1 - m2) + col[1] * m2);
+                  b = Math.round(b * (1 - m2) + col[2] * m2);
+                }
+              }
+            }
+            const idx = (py * W + px) * 4;
+            d[idx] = r;
+            d[idx + 1] = g;
+            d[idx + 2] = b;
+            d[idx + 3] = 255;
+          }
+        }
+        pc.putImageData(img, 0, 0);
+        pc.fillStyle = "rgba(82,114,240,.6)";
+        pc.font = "8px monospace";
+        pc.textAlign = "left";
+        pc.textBaseline = "top";
+        pc.fillText("WebGL SDF Preview", 4, 4);
+      }
+      function hexToRGBArr(hex) {
+        hex = hex.replace("#", "");
+        if (hex.length === 3)
+          hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        return [
+          parseInt(hex.slice(0, 2), 16),
+          parseInt(hex.slice(2, 4), 16),
+          parseInt(hex.slice(4, 6), 16),
+        ];
+      }
+
+      // ══════════════════════════════════════════════
+      //  AI TRACE
+      // ══════════════════════════════════════════════
+      let aiImg = null;
       function loadAIImg(f) {
         if (!f || !f.type.startsWith("image/")) return;
         const reader = new FileReader();
@@ -3873,7 +4675,6 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       }
       function clearAIImg() {
         aiImg = null;
-        aiImgData = null;
         document.getElementById("aiDropLbl").textContent =
           "Drop image (no BG) or click";
         document.getElementById("aiDrop").classList.remove("has");
@@ -3888,7 +4689,6 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       function closeAIModal() {
         document.getElementById("aiModal").classList.remove("open");
       }
-
       function aiPreviewUpdate() {
         if (!aiImg) return;
         const cv = document.getElementById("aiPreviewCanvas");
@@ -3896,14 +4696,13 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
         const W = cv.width,
           H = cv.height;
         oc.clearRect(0, 0, W, H);
-        const cell = 10;
-        for (let y = 0; y < H; y += cell)
-          for (let x = 0; x < W; x += cell) {
+        for (let y = 0; y < H; y += 10)
+          for (let x = 0; x < W; x += 10) {
             oc.fillStyle =
-              (Math.floor(x / cell) + Math.floor(y / cell)) % 2 === 0
+              (Math.floor(x / 10) + Math.floor(y / 10)) % 2 === 0
                 ? "#1a1a2a"
                 : "#141422";
-            oc.fillRect(x, y, cell, cell);
+            oc.fillRect(x, y, 10, 10);
           }
         const sc = Math.min(W / aiImg.width, H / aiImg.height) * 0.9;
         const dw = Math.floor(aiImg.width * sc),
@@ -3924,13 +4723,11 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
         }
         oc.putImageData(imgd, dx, dy);
       }
-
       async function runAITrace() {
         if (!aiImg) return;
         const btn = document.getElementById("runTraceBtn");
         btn.disabled = true;
-        setTraceProgress(0, "Preparing image...");
-
+        setTraceProgress(0, "Preparing...");
         const SIZE = 256;
         const oc = document.createElement("canvas");
         oc.width = SIZE;
@@ -3944,65 +4741,51 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
         octx.clearRect(0, 0, SIZE, SIZE);
         octx.drawImage(aiImg, dx, dy, dw, dh);
         const imgd = octx.getImageData(0, 0, SIZE, SIZE);
-
-        setTraceProgress(15, "Extracting alpha mask...");
-        await delay(30);
-
+        setTraceProgress(15, "Masking...");
+        await delay(20);
         const thr = parseInt(document.getElementById("alphaThr").value) || 30;
         const smooth =
           parseInt(document.getElementById("smoothPasses").value) || 2;
         const tol =
           parseFloat(document.getElementById("simplifyTol").value) || 0.01;
-
         const mask = new Uint8Array(SIZE * SIZE);
         const pd = imgd.data;
-        for (let i = 0; i < SIZE * SIZE; i++) {
+        for (let i = 0; i < SIZE * SIZE; i++)
           mask[i] = pd[i * 4 + 3] >= thr ? 1 : 0;
-        }
-
-        setTraceProgress(30, "Smoothing mask...");
+        setTraceProgress(30, "Smoothing...");
         await delay(20);
         for (let p = 0; p < smooth; p++) smoothMask(mask, SIZE, SIZE);
-
-        setTraceProgress(50, "Tracing contours...");
+        setTraceProgress(50, "Tracing...");
         await delay(20);
-
         const contours = traceContours(mask, SIZE, SIZE);
-        if (contours.length === 0) {
-          toast("No shape detected! Check alpha threshold.");
+        if (!contours.length) {
+          toast("No shape found! Try lowering threshold.");
           btn.disabled = false;
-          setTraceProgress(0, "No shape found.");
+          setTraceProgress(0, "Failed.");
           return;
         }
-
-        setTraceProgress(70, "Simplifying paths...");
+        setTraceProgress(70, "Simplifying...");
         await delay(20);
-
-        const normContours = contours.map((c) =>
+        const normC = contours.map((c) =>
           c.map(([x, y]) => [(x / SIZE - 0.5) * 2, (y / SIZE - 0.5) * 2]),
         );
-
-        const simpContours = normContours
+        const simpC = normC
           .map((c) => rdpSimplify(c, tol))
           .filter((c) => c.length >= 3);
-
-        setTraceProgress(85, "Building layers...");
+        setTraceProgress(85, "Building...");
         await delay(20);
-
         const mode = document.getElementById("aiLayerMode").value;
-        const color = "#5ad1ff";
-        const baseNodes = simpContours.flatMap((c, ci) => {
-          return c.map((pt, i) =>
+        const baseNodes = simpC.flatMap((c, ci) =>
+          c.map((pt, i) =>
             nd(
               i === 0 && ci === 0 ? "M" : ci > 0 && i === 0 ? "M" : "L",
               pt[0],
               pt[1],
             ),
-          );
-        });
-
+          ),
+        );
         const newShapes = [];
-        if (mode === "shadow" || mode === "full") {
+        if (mode === "shadow" || mode === "full")
           newShapes.push(
             mkPath(
               "Shadow",
@@ -4011,52 +4794,39 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
               { scale: 1.06, offsetX: 0.02, offsetY: 0.04 },
             ),
           );
-        }
-        if (
-          mode === "single" ||
-          mode === "outline" ||
-          mode === "shadow" ||
-          mode === "full"
-        ) {
+        if (mode !== "shadow")
           newShapes.push(
             mkPath(
               "Fill",
               baseNodes.map((n) => ({ ...n, id: uid() })),
-              color,
+              "#5ad1ff",
             ),
           );
-        }
         if (mode === "outline" || mode === "full") {
-          const outlineSh = mkPath(
+          const out = mkPath(
             "Outline",
             baseNodes.map((n) => ({ ...n, id: uid() })),
-            "#ffffff",
+            "#80d0ff",
             { scale: 1.01 },
           );
-          outlineSh.stroke.enabled = true;
-          outlineSh.stroke.color = "#80d0ff";
-          outlineSh.stroke.width = 0.025;
-          outlineSh.color = "#00000000";
-          newShapes.push(outlineSh);
+          out.stroke.enabled = true;
+          out.stroke.color = "#80d0ff";
+          out.stroke.width = 0.025;
+          out.fill = false;
+          newShapes.push(out);
         }
-
         for (const sh of newShapes) S.shapes.push(sh);
         S.activeId = newShapes[newShapes.length - 1].id;
         S.selNodeId = null;
-
-        setTraceProgress(
-          100,
-          "Done! " + baseNodes.length + " points generated.",
-        );
+        setTraceProgress(100, "Done! " + baseNodes.length + " pts");
         hPush();
         renderLayers();
         renderProps();
         redraw();
         closeAIModal();
-        toast("✨ " + newShapes.length + " layers generated from image!");
+        toast("✨ " + newShapes.length + " layers from image!");
         btn.disabled = false;
       }
-
       function setTraceProgress(pct, msg) {
         document.getElementById("traceBarFill").style.width = pct + "%";
         document.getElementById("traceStatus").textContent = msg;
@@ -4079,20 +4849,19 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       function traceContours(mask, W, H) {
         const visited = new Uint8Array(W * H);
         const contours = [];
-        const dirs = [
+        const dirs4 = [
           [1, 0],
           [0, 1],
           [-1, 0],
           [0, -1],
         ];
-
-        function boundaryPixels() {
+        function bpts() {
           const pts = [];
           for (let y = 0; y < H; y++)
             for (let x = 0; x < W; x++) {
               if (!mask[y * W + x]) continue;
-              let boundary = false;
-              for (const [dx, dy] of dirs) {
+              let b = false;
+              for (const [dx, dy] of dirs4) {
                 const nx = x + dx,
                   ny = y + dy;
                 if (
@@ -4102,42 +4871,38 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
                   ny >= H ||
                   !mask[ny * W + nx]
                 ) {
-                  boundary = true;
+                  b = true;
                   break;
                 }
               }
-              if (boundary) pts.push([x, y]);
+              if (b) pts.push([x, y]);
             }
           return pts;
         }
-
-        function walkContour(sx, sy) {
+        function walk(sx, sy) {
           const pts = [[sx, sy]];
           visited[sy * W + sx] = 1;
           let cx = sx,
             cy = sy;
-          const maxSteps = W * H;
-          let steps = 0;
-          while (steps++ < maxSteps) {
+          const nb = [
+            [1, 0],
+            [1, 1],
+            [0, 1],
+            [-1, 1],
+            [-1, 0],
+            [-1, -1],
+            [0, -1],
+            [1, -1],
+          ];
+          for (let st = 0; st < W * H; st++) {
             let found = false;
-            const neighbors = [
-              [1, 0],
-              [1, 1],
-              [0, 1],
-              [-1, 1],
-              [-1, 0],
-              [-1, -1],
-              [0, -1],
-              [1, -1],
-            ];
-            for (const [dx, dy] of neighbors) {
+            for (const [dx, dy] of nb) {
               const nx = cx + dx,
                 ny = cy + dy;
               if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
-              if (!mask[ny * W + nx]) continue;
-              if (visited[ny * W + nx]) continue;
-              let bnd = false;
-              for (const [dx2, dy2] of dirs) {
+              if (!mask[ny * W + nx] || visited[ny * W + nx]) continue;
+              let b = false;
+              for (const [dx2, dy2] of dirs4) {
                 const nnx = nx + dx2,
                   nny = ny + dy2;
                 if (
@@ -4147,11 +4912,11 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
                   nny >= H ||
                   !mask[nny * W + nnx]
                 ) {
-                  bnd = true;
+                  b = true;
                   break;
                 }
               }
-              if (bnd) {
+              if (b) {
                 visited[ny * W + nx] = 1;
                 pts.push([nx, ny]);
                 cx = nx;
@@ -4164,17 +4929,15 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
           }
           return pts;
         }
-
-        const bpts = boundaryPixels();
-        for (const [bx, by] of bpts) {
+        const bp = bpts();
+        for (const [bx, by] of bp) {
           if (visited[by * W + bx]) continue;
-          const contour = walkContour(bx, by);
-          if (contour.length > 8) contours.push(contour);
+          const c = walk(bx, by);
+          if (c.length > 8) contours.push(c);
         }
         contours.sort((a, b) => b.length - a.length);
         return contours.slice(0, 1);
       }
-
       const aiDrop = document.getElementById("aiDrop");
       aiDrop.addEventListener("dragover", (e) => {
         e.preventDefault();
@@ -4239,7 +5002,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       // ══════════════════════════════════════════════
       function buildExport() {
         return {
-          version: "2.0",
+          version: "3.0",
           key: S.shapeKey,
           previewSize: S.previewSize,
           shapes: S.shapes,
@@ -4284,7 +5047,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
           try {
             const d = JSON.parse(ev.target.result);
             if (!d.shapes || !Array.isArray(d.shapes))
-              throw new Error("Invalid format");
+              throw new Error("Invalid");
             S.shapes = d.shapes.map((sh) => {
               if (!sh.id) sh.id = uid();
               if (sh.nodes)
@@ -4292,6 +5055,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
                   if (!n.id) n.id = uid();
                 });
               if (!sh.stroke) sh.stroke = mkStroke();
+              if (sh.fill === undefined) sh.fill = sh.type !== "freehand";
               return sh;
             });
             if (d.key) {
@@ -4322,6 +5086,35 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
       }
 
       // ══════════════════════════════════════════════
+      //  COPY / DOWNLOAD
+      // ══════════════════════════════════════════════
+      function copyExport() {
+        navigator.clipboard
+          .writeText(getExportCode())
+          .then(() => toast("✓ Copied"));
+      }
+      function downloadExport() {
+        const ext =
+          { pixi: ".ts", canvas: ".ts", webgl: ".glsl" }[S.exportTarget] ||
+          ".txt";
+        const slug = (S.shapeKey || "shape").replace(/[^a-z0-9_]/gi, "_");
+        const blob = new Blob([getExportCode()], { type: "text/plain" });
+        const a = Object.assign(document.createElement("a"), {
+          href: URL.createObjectURL(blob),
+          download: slug + ext,
+        });
+        a.click();
+        URL.revokeObjectURL(a.href);
+        toast("✓ Downloaded " + slug + ext);
+      }
+      function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("on");
+        setTimeout(() => t.classList.remove("on"), 2400);
+      }
+
+      // ══════════════════════════════════════════════
       //  STATUS
       // ══════════════════════════════════════════════
       function updStatus() {
@@ -4336,145 +5129,6 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
               ? a.points.length
               : "—";
         document.getElementById("st-pts").textContent = pts;
-      }
-
-      // ══════════════════════════════════════════════
-      //  CODE GENERATION
-      // ══════════════════════════════════════════════
-      function degExpr(deg) {
-        const d = parseFloat(deg) || 0;
-        if (d === -90) return "-Math.PI/2";
-        if (d === 90) return "Math.PI/2";
-        if (Math.abs(d) === 180) return "Math.PI";
-        if (d === 0) return "0";
-        return ((d * Math.PI) / 180).toFixed(4);
-      }
-      function generateCode() {
-        const key = S.shapeKey || "PETALS.YOUR_PETAL";
-        const L = [];
-        L.push(`[${key}]: ($, size) => {`);
-        L.push(`    const s = size / 2;`);
-        if (!S.shapes.length) {
-          L.push(`    // No layers yet`);
-          L.push(`},`);
-          renderCode(L.join("\n"));
-          return;
-        }
-        L.push(
-          `\n    const rot2d = (x: number, y: number, rot: number, sc: number, ox: number, oy: number): [number, number] => {`,
-        );
-        L.push(`        const cos = Math.cos(rot), sin = Math.sin(rot);`);
-        L.push(
-          `        return [ox + (x * cos - y * sin) * sc, oy + (x * sin + y * cos) * sc];`,
-        );
-        L.push(`    };`);
-        for (const sh of S.shapes) {
-          if (!sh.visible) continue;
-          const reps = Math.max(1, Math.round(sh.repeatCount || 1));
-          L.push(`\n    // ${sh.name}`);
-          L.push(`    for (let i = 0; i < ${reps}; i++) {`);
-          const re =
-            reps > 1
-              ? `${degExpr(sh.rotationDeg)} + i * (Math.PI * 2 / ${reps})`
-              : degExpr(sh.rotationDeg);
-          L.push(`        const rot = ${re};`);
-          L.push(
-            `        const r = (x: number, y: number) => rot2d(x, y, rot, ${f2(sh.scale)}, s * ${f2(sh.offsetX)}, s * ${f2(sh.offsetY)});`,
-          );
-          if (sh.type === "path") {
-            L.push(`        $.beginFill(${hx(sh.color)});`);
-            (sh.nodes || []).forEach((n, i) => {
-              const px = `s*${f2(n.x)}`,
-                py = `s*${f2(n.y)}`;
-              if (i === 0 || n.seg === "M")
-                L.push(`        $.moveTo(...r(${px},${py}));`);
-              else if (n.seg === "L")
-                L.push(`        $.lineTo(...r(${px},${py}));`);
-              else if (n.seg === "Q")
-                L.push(
-                  `        $.quadraticCurveTo(...r(s*${f2(n.cx1)},s*${f2(n.cy1)}),...r(${px},${py}));`,
-                );
-              else if (n.seg === "C")
-                L.push(
-                  `        $.bezierCurveTo(...r(s*${f2(n.cx1)},s*${f2(n.cy1)}),...r(s*${f2(n.cx2)},s*${f2(n.cy2)}),...r(${px},${py}));`,
-                );
-            });
-            if (sh.closePath) L.push(`        $.closePath();`);
-            L.push(`        $.endFill();`);
-            if (sh.stroke && sh.stroke.enabled)
-              L.push(
-                `        $.lineStyle(s*${f2(sh.stroke.width || 0.03)},${hx(sh.stroke.color || sh.color)});`,
-              );
-          } else if (sh.type === "circle") {
-            L.push(`        const [cx,cy] = r(s*${f2(sh.x)},s*${f2(sh.y)});`);
-            L.push(`        $.beginFill(${hx(sh.color)});`);
-            L.push(
-              `        $.drawCircle(cx,cy,s*${f2(sh.scale)}*${f2(sh.radius)});`,
-            );
-            L.push(`        $.endFill();`);
-          } else if (
-            sh.type === "freehand" &&
-            sh.points &&
-            sh.points.length > 1
-          ) {
-            L.push(
-              `        $.lineStyle(s*${f2(sh.stroke.width || 0.04)},${hx(sh.stroke.color || sh.color)});`,
-            );
-            sh.points.forEach(([x, y], i) => {
-              if (i === 0)
-                L.push(`        $.moveTo(...r(s*${f2(x)},s*${f2(y)}));`);
-              else L.push(`        $.lineTo(...r(s*${f2(x)},s*${f2(y)}));`);
-            });
-          }
-          L.push(`    }`);
-        }
-        L.push(`},`);
-        renderCode(L.join("\n"));
-      }
-      function renderCode(src) {
-        let h = src
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;");
-        h = h.replace(/(\/\/.*)/g, '<span class="c">$1</span>');
-        h = h.replace(
-          /\b(const|let|for|return|number)\b/g,
-          '<span class="k">$1</span>',
-        );
-        h = h.replace(/(0x[0-9A-Fa-f]+)/g, '<span class="n">$1</span>');
-        h = h.replace(/\b(-?\d+\.\d+)\b/g, '<span class="n">$1</span>');
-        h = h.replace(
-          /\b(Math\.\w+|rot2d|bezierCurveTo|quadraticCurveTo|lineTo|moveTo|beginFill|endFill|closePath|drawCircle|lineStyle)\b/g,
-          '<span class="f">$1</span>',
-        );
-        document.getElementById("codeOut").innerHTML = h;
-      }
-
-      // ══════════════════════════════════════════════
-      //  COPY / DOWNLOAD
-      // ══════════════════════════════════════════════
-      const getCode = () =>
-        document.getElementById("codeOut").innerText ||
-        document.getElementById("codeOut").textContent;
-      function copyCode() {
-        navigator.clipboard.writeText(getCode()).then(() => toast("✓ Copied"));
-      }
-      function downloadCode() {
-        const slug = (S.shapeKey || "shape").replace(/[^a-z0-9_]/gi, "_");
-        const blob = new Blob([getCode()], { type: "text/plain" });
-        const a = Object.assign(document.createElement("a"), {
-          href: URL.createObjectURL(blob),
-          download: slug + ".ts",
-        });
-        a.click();
-        URL.revokeObjectURL(a.href);
-        toast("✓ Downloaded " + slug + ".ts");
-      }
-      function toast(msg) {
-        const t = document.getElementById("toast");
-        t.textContent = msg;
-        t.classList.add("on");
-        setTimeout(() => t.classList.remove("on"), 2400);
       }
 
       // ══════════════════════════════════════════════
@@ -4500,7 +5154,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
             return;
           }
           if (e.key === "c") {
-            copyCode();
+            copyExport();
             return;
           }
         }
@@ -4532,6 +5186,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
           9: "ellipse",
         };
         if (km[e.key]) setMode(km[e.key]);
+        if (e.key === "t" || e.key === "T") setMode("text");
         if (e.key === "h" || e.key === "H")
           setMode(S.mode === "pan" ? "select" : "pan");
         if (e.key === "r" || e.key === "R") setMode("ref");
@@ -4547,7 +5202,7 @@ ${sh.type === "path" ? `<div class="togr"><span class="togl">Close path</span><i
         if (e.key === "0") resetView();
         if (e.key === "Tab") {
           e.preventDefault();
-          const tabs = ["layers", "props", "code", "json"];
+          const tabs = ["layers", "props", "export", "json"];
           const curr =
             document.querySelector(".rtab.active")?.dataset.rtab || "layers";
           setRTab(tabs[(tabs.indexOf(curr) + 1) % tabs.length]);
